@@ -11,3 +11,4 @@ C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMada
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.exe
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.pdb
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.client.resources
+C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProiectPAW_Tuca_Madalin_1048.Form2.resources

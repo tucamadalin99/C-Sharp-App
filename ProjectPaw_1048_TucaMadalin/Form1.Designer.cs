@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(firstPanel));
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.ctBtn = new System.Windows.Forms.Button();
             this.logBtn = new System.Windows.Forms.Button();
             this.regBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.home1 = new ProiectPAW_Tuca_Madalin_1048.home();
             this.login1 = new ProiectPAW_Tuca_Madalin_1048.login();
+            this.client2 = new ProjectPaw_1048_TucaMadalin.client();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -51,22 +54,11 @@
             this.panel1.Controls.Add(this.exitBtn);
             this.panel1.Controls.Add(this.home1);
             this.panel1.Controls.Add(this.login1);
+            this.panel1.Controls.Add(this.client2);
             this.panel1.Location = new System.Drawing.Point(195, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(607, 454);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
-            this.panel2.Controls.Add(this.ctBtn);
-            this.panel2.Controls.Add(this.logBtn);
-            this.panel2.Controls.Add(this.regBtn);
-            this.panel2.Controls.Add(this.homeBtn);
-            this.panel2.Location = new System.Drawing.Point(-1, -1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(199, 454);
-            this.panel2.TabIndex = 0;
             // 
             // panel3
             // 
@@ -95,6 +87,18 @@
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
+            this.panel2.Controls.Add(this.ctBtn);
+            this.panel2.Controls.Add(this.logBtn);
+            this.panel2.Controls.Add(this.regBtn);
+            this.panel2.Controls.Add(this.homeBtn);
+            this.panel2.Location = new System.Drawing.Point(-1, -1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(199, 454);
+            this.panel2.TabIndex = 0;
+            // 
             // ctBtn
             // 
             this.ctBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -104,9 +108,9 @@
             this.ctBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctBtn.ForeColor = System.Drawing.Color.White;
             this.ctBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.contact;
-            this.ctBtn.Location = new System.Drawing.Point(40, 344);
+            this.ctBtn.Location = new System.Drawing.Point(0, 344);
             this.ctBtn.Name = "ctBtn";
-            this.ctBtn.Size = new System.Drawing.Size(106, 69);
+            this.ctBtn.Size = new System.Drawing.Size(196, 69);
             this.ctBtn.TabIndex = 9;
             this.ctBtn.Text = "Contact";
             this.ctBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -121,9 +125,9 @@
             this.logBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logBtn.ForeColor = System.Drawing.Color.White;
             this.logBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.login;
-            this.logBtn.Location = new System.Drawing.Point(40, 237);
+            this.logBtn.Location = new System.Drawing.Point(-1, 237);
             this.logBtn.Name = "logBtn";
-            this.logBtn.Size = new System.Drawing.Size(106, 69);
+            this.logBtn.Size = new System.Drawing.Size(197, 69);
             this.logBtn.TabIndex = 8;
             this.logBtn.Text = "Login";
             this.logBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -140,9 +144,9 @@
             this.regBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.regBtn.ForeColor = System.Drawing.Color.White;
             this.regBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.note;
-            this.regBtn.Location = new System.Drawing.Point(40, 137);
+            this.regBtn.Location = new System.Drawing.Point(-1, 137);
             this.regBtn.Name = "regBtn";
-            this.regBtn.Size = new System.Drawing.Size(106, 69);
+            this.regBtn.Size = new System.Drawing.Size(197, 69);
             this.regBtn.TabIndex = 7;
             this.regBtn.Text = "Register";
             this.regBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -158,14 +162,18 @@
             this.homeBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeBtn.ForeColor = System.Drawing.Color.White;
             this.homeBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.home_run;
-            this.homeBtn.Location = new System.Drawing.Point(40, 34);
+            this.homeBtn.Location = new System.Drawing.Point(-1, 34);
             this.homeBtn.Name = "homeBtn";
-            this.homeBtn.Size = new System.Drawing.Size(106, 69);
+            this.homeBtn.Size = new System.Drawing.Size(197, 69);
             this.homeBtn.TabIndex = 6;
             this.homeBtn.Text = "Home";
             this.homeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.homeBtn.UseVisualStyleBackColor = true;
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
+            // 
+            // timer1
+            // 
+          //  this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // home1
             // 
@@ -186,6 +194,14 @@
             this.login1.Name = "login1";
             this.login1.Size = new System.Drawing.Size(607, 454);
             this.login1.TabIndex = 1;
+            // 
+            // client2
+            // 
+            this.client2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("client2.BackgroundImage")));
+            this.client2.Location = new System.Drawing.Point(0, 3);
+            this.client2.Name = "client2";
+            this.client2.Size = new System.Drawing.Size(626, 451);
+            this.client2.TabIndex = 1;
             // 
             // firstPanel
             // 
@@ -218,6 +234,8 @@
         private System.Windows.Forms.Button homeBtn;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Panel panel3;
+        private ProjectPaw_1048_TucaMadalin.client client2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

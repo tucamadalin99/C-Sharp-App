@@ -15,6 +15,20 @@ namespace ProiectPAW_Tuca_Madalin_1048
         public home()
         {
             InitializeComponent();
+            timer1.Start();
+            
+        }
+
+
+        private void timeLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            DateTime dateTime = DateTime.Now;
+            this.timeLbl.Text = dateTime.ToString();
         }
     }
 }

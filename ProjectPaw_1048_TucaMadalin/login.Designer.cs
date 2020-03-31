@@ -185,6 +185,7 @@
             this.tbPass.Name = "tbPass";
             this.tbPass.Size = new System.Drawing.Size(137, 22);
             this.tbPass.TabIndex = 14;
+            this.tbPass.TextChanged += new System.EventHandler(this.tbPass_TextChanged);
             this.tbPass.Validating += new System.ComponentModel.CancelEventHandler(this.tbPass_Validating);
             // 
             // label7
@@ -206,6 +207,7 @@
             this.tbConfPass.Name = "tbConfPass";
             this.tbConfPass.Size = new System.Drawing.Size(137, 22);
             this.tbConfPass.TabIndex = 16;
+            this.tbConfPass.TextChanged += new System.EventHandler(this.tbConfPass_TextChanged);
             this.tbConfPass.Validating += new System.ComponentModel.CancelEventHandler(this.tbConfPass_Validating);
             // 
             // label8
@@ -230,20 +232,19 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.GhostWhite;
             this.button4.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.check;
-            this.button4.Location = new System.Drawing.Point(260, 367);
+            this.button4.Location = new System.Drawing.Point(211, 373);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 59);
+            this.button4.Size = new System.Drawing.Size(200, 72);
             this.button4.TabIndex = 10;
             this.button4.Text = "Register!";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-         
             // 
             // panel1
             // 

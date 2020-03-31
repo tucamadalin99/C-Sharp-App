@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace ProiectPAW_Tuca_Madalin_1048
 {
     public partial class login : UserControl
+
     {
+        private List<User> UserList1 = new List<User>();
+        public static User u = new User();
+        
         public login()
         {
             InitializeComponent();
-         
-        }
 
+        }
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -26,21 +31,19 @@ namespace ProiectPAW_Tuca_Madalin_1048
 
         private void tbFirstName_TextChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {
-
-          
+        { 
             string fName = tbFirstName.Text;
-                string lName = tbLastName.Text;
-                string phone = tbPhone.Text;
-                string email = tbEmail.Text;
-                string pass = tbPass.Text;
-                string confPass = tbConfPass.Text;
-                string uName = tbAge.Text;
+            string lName = tbLastName.Text;
+            string phone = tbPhone.Text;
+            string email = tbEmail.Text;
+            string pass = tbPass.Text;
+            string confPass = tbConfPass.Text;
+            string uName = tbAge.Text;
             if (tbFirstName.Text == "" || tbLastName.Text == "" || tbPhone.Text == "" || tbEmail.Text == "" || tbAge.Text == "" || tbPass.Text == "" || tbConfPass.Text == "")
             {
                 MessageBox.Show("One or more fields ar empty!");
@@ -48,11 +51,34 @@ namespace ProiectPAW_Tuca_Madalin_1048
             }
             else
             {
-                User u = new User(fName, lName, email, pass, confPass, phone, uName);
-                MessageBox.Show(u.ToString());
+                UserList1.Add(new User(fName, lName, phone, email, pass, confPass, uName));
+                foreach (var user in UserList1)
+                {
+                    MessageBox.Show(user.ToString() + "\n");
+                }
             }
-           // User u = new User(fName, lName, email, phone, age);
-           
+            try
+            {
+                u.Nume = fName;
+                u.Prenume = lName;
+                u.NrTel = phone;
+                u.Email = email;
+                u.Pass = pass;
+                u.ConfPass = confPass;
+                u.UName = uName;
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            string docPath = @"C:\c#\users.txt";
+            File.WriteAllLines(docPath, new string[]{ uName, pass});
+      
+        }
+
+
+      public string getUName()
+        {
+            return tbAge.Text;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -179,7 +205,14 @@ namespace ProiectPAW_Tuca_Madalin_1048
             }
         }
 
-       
-       
+        private void tbPass_TextChanged(object sender, EventArgs e)
+        {
+            tbPass.UseSystemPasswordChar = true;
+        }
+
+        private void tbConfPass_TextChanged(object sender, EventArgs e)
+        {
+            tbConfPass.UseSystemPasswordChar = true;
+        }
     }
 }

@@ -12,9 +12,12 @@ namespace ProiectPAW_Tuca_Madalin_1048
 {
     public partial class firstPanel : Form
     {
+
+       List<User> UserList = new List<User>();
         public firstPanel()
         {
             InitializeComponent();
+            
             home1.Visible = true;
             login1.Visible = false;
            
@@ -80,6 +83,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
         {
             home1.Visible = true;
             login1.Visible = false;
+            
         }
 
         private void regBtn_Click(object sender, EventArgs e)
@@ -98,6 +102,12 @@ namespace ProiectPAW_Tuca_Madalin_1048
         {
             home1.Visible = false;
             login1.Visible = false;
+        }
+
+
+        private void timeLbl_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)

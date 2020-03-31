@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProiectPAW_Tuca_Madalin_1048
 {
-    class User : ICloneable, IComparable
+    public partial class User : ICloneable, IComparable
     {
         private string nume;
         private string prenume;
@@ -110,6 +110,10 @@ namespace ProiectPAW_Tuca_Madalin_1048
             }
         }
 
+        public User getUser()
+        {
+            return new User(nume, prenume, email, pass, confPass, nrTel, uName);
+        }
         public Object Clone()
         {
             return this.MemberwiseClone();
