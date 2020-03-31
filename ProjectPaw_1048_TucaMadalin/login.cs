@@ -72,6 +72,13 @@ namespace ProiectPAW_Tuca_Madalin_1048
             }
             string docPath = @"C:\c#\users.txt";
             File.WriteAllLines(docPath, new string[]{ uName, pass});
+            TextWriter tw = new StreamWriter("UserList.txt");
+            foreach(var u in UserList1)
+            {
+                tw.WriteLine(u);
+            }
+            tw.Close();
+
       
         }
 

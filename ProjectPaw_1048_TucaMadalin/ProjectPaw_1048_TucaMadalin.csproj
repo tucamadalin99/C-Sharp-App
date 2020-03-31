@@ -72,6 +72,12 @@
     <Compile Include="home.Designer.cs">
       <DependentUpon>home.cs</DependentUpon>
     </Compile>
+    <Compile Include="hotels.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="hotels.Designer.cs">
+      <DependentUpon>hotels.cs</DependentUpon>
+    </Compile>
     <Compile Include="IPretMediu.cs" />
     <Compile Include="login.cs">
       <SubType>UserControl</SubType>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="home.resx">
       <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hotels.resx">
+      <DependentUpon>hotels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -154,6 +163,11 @@
     <None Include="Resources\login2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\calendar.png" />
+    <None Include="Resources\calendar1.png" />
+    <None Include="Resources\hotel.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\myAcc.png" />
     <Content Include="Resources\Users.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

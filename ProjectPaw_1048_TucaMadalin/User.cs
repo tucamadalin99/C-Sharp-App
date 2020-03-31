@@ -127,8 +127,8 @@ namespace ProiectPAW_Tuca_Madalin_1048
 
         public override string ToString()
         {
-            return "User: " + nume + "\n" + prenume + "\n" + "Email: " + email + "\n" + "Numar telefon: " + nrTel
-                + "\n" + "Username: " + uName + "\n Sucessfully registered!";
+            return "First Name: " + nume + "\nLast Name:" + prenume + "\n" + "Email: " + email + "\n" + "Numar telefon: " + nrTel
+                + "\n" + "Username: " + uName + "\n Sucessfully registered!\n";
         }
     }
 }

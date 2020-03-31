@@ -1,7 +1,6 @@
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\bin\Debug\ProjectPaw_1048_TucaMadalin.exe.config
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\bin\Debug\ProjectPaw_1048_TucaMadalin.exe
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\bin\Debug\ProjectPaw_1048_TucaMadalin.pdb
-C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.csprojAssemblyReference.cache
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProiectPAW_Tuca_Madalin_1048.firstPanel.resources
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProiectPAW_Tuca_Madalin_1048.home.resources
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProiectPAW_Tuca_Madalin_1048.login.resources
@@ -12,3 +11,19 @@ C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMada
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.pdb
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.client.resources
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProiectPAW_Tuca_Madalin_1048.Form2.resources
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\bin\Debug\ProjectPaw_1048_TucaMadalin.exe.config
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\bin\Debug\ProjectPaw_1048_TucaMadalin.exe
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\bin\Debug\ProjectPaw_1048_TucaMadalin.pdb
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.csprojAssemblyReference.cache
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.client.resources
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProiectPAW_Tuca_Madalin_1048.firstPanel.resources
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProiectPAW_Tuca_Madalin_1048.Form2.resources
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProiectPAW_Tuca_Madalin_1048.home.resources
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProiectPAW_Tuca_Madalin_1048.login.resources
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.Properties.Resources.resources
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.csproj.GenerateResource.cache
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.csproj.CoreCompileInputs.cache
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.exe
+C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.pdb
+C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.hotels.resources
+C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.csprojAssemblyReference.cache

@@ -45,7 +45,7 @@ namespace ProjectPaw_1048_TucaMadalin
             string[] compUser = File.ReadAllLines(docPath);
 
 
-            if (compUser[0] == tbuName.Text && compUser[1] == tbPassLog.Text)
+            if (compUser[0] == tbuName.Text && compUser[1] == tbPassLog.Text && tbuName.Text != "" && tbPassLog.Text != "")
             {
 
                 MessageBox.Show("Succsefully registered!");
