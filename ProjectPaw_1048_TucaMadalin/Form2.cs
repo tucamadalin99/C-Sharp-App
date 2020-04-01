@@ -23,10 +23,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
        
         public Form2()
         {
-            string path = @"C:\c#\users.txt";
-            string[] user = File.ReadAllLines(path);
             InitializeComponent();
-            labelName.Text += user[0];
             rtb1.Visible = false;
             hotels1.Visible = false;
         }
