@@ -48,7 +48,7 @@ namespace ProjectPaw_1048_TucaMadalin
             if (compUser[0] == tbuName.Text && compUser[1] == tbPassLog.Text && tbuName.Text != "" && tbPassLog.Text != "")
             {
 
-                MessageBox.Show("Succsefully registered!");
+                MessageBox.Show("Welcome, " + tbuName.Text +"!");
                 Form2 form2 = new Form2();
                 form2.Show();
                 //Closing first form

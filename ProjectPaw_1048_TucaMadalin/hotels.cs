@@ -85,6 +85,35 @@ namespace ProjectPaw_1048_TucaMadalin
             st.Close();
         }
 
-      
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            listView1.Visible = false;
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            listView2.Visible = false;
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            listView3.Visible = false;
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            listView4.Visible = false;
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            listView5.Visible = false;
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            listView6.Visible = false;
+        }
+        
     }
 }

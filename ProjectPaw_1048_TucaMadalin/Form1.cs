@@ -20,13 +20,9 @@ namespace ProiectPAW_Tuca_Madalin_1048
             
             home1.Visible = true;
             login1.Visible = false;
-           
-          
-
+        
         }
-        int mov;
-        int movX;
-        int movY;
+       
         private void firstPanel_Load(object sender, EventArgs e)
         {
             this.Location = Screen.AllScreens[1].WorkingArea.Location;
@@ -34,7 +30,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
 
         int mouseX = 0, mouseY = 0;
         bool mouseDown;
-        private object client1;
+       
 
         public object UserLogin1 { get; private set; }
 
