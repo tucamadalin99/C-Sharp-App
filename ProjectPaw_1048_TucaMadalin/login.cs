@@ -15,7 +15,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
     public partial class login : UserControl
 
     {
-        private List<User> UserList1 = new List<User>();
+         List<User> UserList1 = new List<User>();
         public static User u = new User();
         
         public login()

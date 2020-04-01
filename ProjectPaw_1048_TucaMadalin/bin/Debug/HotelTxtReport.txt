@@ -1,0 +1,54 @@
+Locatia: Constinesti
+Denumire: Casa Duca
+Numar zile: 4
+Numarul camerelor: 4
+Tip camera: Dubla
+Pret mediu: 0
+Preturi: 345.65, 341.32, 214.53, 321.43
+-------------------------------------
+
+Locatia: Bucuresti
+Denumire: InterContinental
+Numar zile: 4
+Numarul camerelor: 4
+Tip camera: Single
+Pret mediu: 0
+Preturi: 345.65, 341.32, 214.53, 321.43
+-------------------------------------
+
+Locatia: Targu Jiu
+Denumire: Europa
+Numar zile: 4
+Numarul camerelor: 5
+Tip camera: Single
+Pret mediu: 0
+Preturi: 345.65, 341.32, 214.53, 321.43
+-------------------------------------
+
+Locatia: Bucuresti
+Denumire: Continental
+Numar zile: 4
+Numarul camerelor: 5
+Tip camera: Dubla
+Pret mediu: 0
+Preturi: 345.65, 341.32, 214.53, 321.43
+-------------------------------------
+
+Locatia: Bucuresti
+Denumire: Azure
+Numar zile: 4
+Numarul camerelor: 5
+Tip camera: Single
+Pret mediu: 0
+Preturi: 345.65, 341.32, 214.53, 321.43
+-------------------------------------
+
+Locatia: Bucuresti
+Denumire: Linux
+Numar zile: 4
+Numarul camerelor: 5
+Tip camera: Single
+Pret mediu: 0
+Preturi: 345.65, 341.32, 214.53, 321.43
+-------------------------------------
+

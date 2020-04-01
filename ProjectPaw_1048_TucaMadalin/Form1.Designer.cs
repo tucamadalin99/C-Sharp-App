@@ -171,10 +171,6 @@
             this.homeBtn.UseVisualStyleBackColor = true;
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
             // 
-            // timer1
-            // 
-          //  this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // home1
             // 
             this.home1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("home1.BackgroundImage")));
