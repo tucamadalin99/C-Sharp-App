@@ -26,4 +26,5 @@ C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\P
 C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.exe
 C:\Users\maad3\Desktop\Repos\C-Sharp-App\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.pdb
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.hotels.resources
+C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.UserInfo.resources
 C:\Users\maad3\source\repos\ProjectPaw_1048_TucaMadalin\ProjectPaw_1048_TucaMadalin\obj\Debug\ProjectPaw_1048_TucaMadalin.csprojAssemblyReference.cache

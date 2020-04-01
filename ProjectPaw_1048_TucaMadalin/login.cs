@@ -51,7 +51,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
             }
             else
             {
-                UserList1.Add(new User(fName, lName, phone, email, pass, confPass, uName));
+                UserList1.Add(new User(fName, lName, email, phone, pass, confPass, uName));
                 foreach (var user in UserList1)
                 {
                     MessageBox.Show(user.ToString() + "\n");
@@ -70,8 +70,15 @@ namespace ProiectPAW_Tuca_Madalin_1048
             {
                 throw new Exception(ex.Message);
             }
-            string docPath = @"C:\c#\users.txt";
-            File.WriteAllLines(docPath, new string[]{ uName, pass});
+            // string docPath = @"C:\c#\users.txt";
+            // File.WriteAllLines(docPath, new string[]{ uName, pass});
+            TextWriter userWrite = new StreamWriter("LoginInfo.txt");
+            foreach(User s in UserList1)
+            {
+                userWrite.WriteLine(s.UName);
+                userWrite.WriteLine(s.ConfPass);
+            }
+            userWrite.Close();
             TextWriter tw = new StreamWriter("UserList.txt");
             foreach(var u in UserList1)
             {

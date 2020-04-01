@@ -1,12 +1,6 @@
-First Name: Tuca
- Last Name:Madalin
-Email: 0723319930
-Numar telefon: asd
-Username: tuca23
- Sucessfully registered!
-First Name: Radu
- Last Name:Traistaru
-Email: 0723319930
-Numar telefon: asd
-Username: radu34
- Sucessfully registered!
+First Name: George
+Last Name:Dolofan
+Email: dolog@gmail.com
+Numar telefon: 0722199300
+Username: kline23
+

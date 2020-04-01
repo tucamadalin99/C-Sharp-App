@@ -36,6 +36,7 @@
             this.logBtn = new System.Windows.Forms.Button();
             this.bookedBtn = new System.Windows.Forms.Button();
             this.bookBtn = new System.Windows.Forms.Button();
+            this.rtb1 = new System.Windows.Forms.RichTextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +48,10 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(809, 10);
             this.panel3.TabIndex = 3;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
+            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
             // 
             // panel2
             // 
@@ -65,7 +70,7 @@
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.White;
-            this.labelName.Location = new System.Drawing.Point(341, 156);
+            this.labelName.Location = new System.Drawing.Point(336, 57);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(137, 28);
             this.labelName.TabIndex = 5;
@@ -158,12 +163,24 @@
             this.bookBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bookBtn.UseVisualStyleBackColor = true;
             // 
+            // rtb1
+            // 
+            this.rtb1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.rtb1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtb1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb1.Location = new System.Drawing.Point(279, 111);
+            this.rtb1.Name = "rtb1";
+            this.rtb1.Size = new System.Drawing.Size(398, 301);
+            this.rtb1.TabIndex = 7;
+            this.rtb1.Text = "";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
             this.ClientSize = new System.Drawing.Size(782, 424);
+            this.Controls.Add(this.rtb1);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.panel2);
@@ -186,5 +203,6 @@
         private System.Windows.Forms.Button bookBtn;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.RichTextBox rtb1;
     }
 }

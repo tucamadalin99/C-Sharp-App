@@ -27,8 +27,10 @@ namespace ProiectPAW_Tuca_Madalin_1048
             string[] user = File.ReadAllLines(path);
             InitializeComponent();
             labelName.Text += user[0];
+            rtb1.Visible = false;
         }
-
+        int mouseX = 0, mouseY = 0;
+        bool mouseDown;
         private void exitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -43,6 +45,39 @@ namespace ProiectPAW_Tuca_Madalin_1048
 
         private void accBtn_Click(object sender, EventArgs e)
         {
+            StreamReader sr = new StreamReader("UserList.txt");
+            rtb1.Visible = true;
+            rtb1.Text = sr.ReadToEnd();
+
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+
+        }
+
+        private void panel3_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                mouseX = MousePosition.X - 200;
+                mouseY = MousePosition.Y - 40;
+                this.SetDesktopLocation(mouseX, mouseY);
+            }
+
+        }
+
+        private void panel3_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
 
         }
     }

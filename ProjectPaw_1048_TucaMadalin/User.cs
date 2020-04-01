@@ -30,7 +30,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
             id = contor++;
         }
 
-        public User(string n, string pN, string eM, string ps, string cfps, string nT, string uN)
+        public User(string n, string pN, string eM, string nT, string ps, string cfps, string uN)
         {
             nume = n;
             prenume = pN;
@@ -127,8 +127,8 @@ namespace ProiectPAW_Tuca_Madalin_1048
 
         public override string ToString()
         {
-            return "First Name: " + nume + "\nLast Name:" + prenume + "\n" + "Email: " + email + "\n" + "Numar telefon: " + nrTel
-                + "\n" + "Username: " + uName + "\n Sucessfully registered!\n";
+            return  "First Name: " + nume + "\nLast Name:" + prenume + "\n" + "Email: " + this.email + "\n" + "Numar telefon: "
+                + nrTel + "\n" +  "Username: " + uName + "\n";
         }
     }
 }

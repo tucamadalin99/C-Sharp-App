@@ -41,8 +41,8 @@ namespace ProjectPaw_1048_TucaMadalin
            
             var log = new login();
             string username = log.getUName();
-            string docPath = @"C:\c#\users.txt";
-            string[] compUser = File.ReadAllLines(docPath);
+            string path = Directory.GetCurrentDirectory()+ @"\LoginInfo.txt"; 
+            string[] compUser = File.ReadAllLines(path);
 
 
             if (compUser[0] == tbuName.Text && compUser[1] == tbPassLog.Text && tbuName.Text != "" && tbPassLog.Text != "")
@@ -55,6 +55,9 @@ namespace ProjectPaw_1048_TucaMadalin
                 ((Form)this.TopLevelControl).Close();
                 //////////
                 ///
+            }else if((tbuName.Text == "" && tbPassLog.Text == ""))
+            {
+                MessageBox.Show("Input your username and password!");
             }
             else { MessageBox.Show("Invalid user or password! Try Again!"); }
            
