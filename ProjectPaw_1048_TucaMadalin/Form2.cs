@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectPaw_1048_TucaMadalin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -78,6 +79,13 @@ namespace ProiectPAW_Tuca_Madalin_1048
         {
             hotels1.Visible = true;
             rtb1.Visible = false;
+        }
+
+        private void adminBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
         }
 
         private void panel3_MouseUp(object sender, MouseEventArgs e)

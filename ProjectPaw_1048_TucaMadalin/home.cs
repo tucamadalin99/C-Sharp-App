@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjectPaw_1048_TucaMadalin;
 
 namespace ProiectPAW_Tuca_Madalin_1048
 {
@@ -30,5 +31,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
             DateTime dateTime = DateTime.Now;
             this.timeLbl.Text = dateTime.ToString();
         }
+
+       
     }
 }

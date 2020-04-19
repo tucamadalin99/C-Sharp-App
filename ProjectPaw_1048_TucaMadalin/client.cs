@@ -41,26 +41,33 @@ namespace ProjectPaw_1048_TucaMadalin
            
             var log = new login();
             string username = log.getUName();
-            string path = Directory.GetCurrentDirectory()+ @"\LoginInfo.txt"; 
-            string[] compUser = File.ReadAllLines(path);
-
-
-            if (compUser[0] == tbuName.Text && compUser[1] == tbPassLog.Text && tbuName.Text != "" && tbPassLog.Text != "")
+            string path = Directory.GetCurrentDirectory()+ @"\LoginInfo.txt";
+            try
             {
+                string[] compUser = File.ReadAllLines(path);
+                if (compUser[0] == tbuName.Text && compUser[1] == tbPassLog.Text && tbuName.Text != "" && tbPassLog.Text != "")
+                {
 
-                MessageBox.Show("Welcome, " + tbuName.Text +"!");
-                Form2 form2 = new Form2();
-                form2.Show();
-                //Closing first form
-                ((Form)this.TopLevelControl).Close();
-                //////////
-                ///
-            }else if((tbuName.Text == "" && tbPassLog.Text == ""))
-            {
-                MessageBox.Show("Input your username and password!");
+                    MessageBox.Show("Welcome, " + tbuName.Text + "!");
+                     //Closing first form
+                    ((Form)this.TopLevelControl).Close();
+                    //////////
+                    ///
+                    Form2 form2 = new Form2();
+                    form2.Show();
+                
+                }
+                else if ((tbuName.Text == "" && tbPassLog.Text == ""))
+                {
+                    MessageBox.Show("Input your username and password!");
+                }
+                else { MessageBox.Show("Invalid user or password! Try Again!"); }
             }
-            else { MessageBox.Show("Invalid user or password! Try Again!"); }
-           
+            catch (System.IndexOutOfRangeException ex)
+            {
+                MessageBox.Show("No users registered! Register first!");
+            }
+
 
         }
     }

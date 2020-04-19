@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace ProjectPaw_1048_TucaMadalin
 {
-    public partial class UserInfo : UserControl
+    public partial class textBoxes : UserControl
     {
-        public UserInfo()
+        public textBoxes()
         {
             InitializeComponent();
         }
 
-        private void adminBtn_Click(object sender, EventArgs e)
+        public string getLabelVal()
         {
+            return this.label1.Text;
+        }
 
+        public void setLabelVal(string newText)
+        {
+            this.label1.Text = newText;
         }
     }
 }
