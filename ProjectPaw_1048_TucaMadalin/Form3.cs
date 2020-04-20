@@ -16,10 +16,11 @@ namespace ProjectPaw_1048_TucaMadalin
         double[] vect = new double[20];
         int[] years = new int[20];
         int n = 0;
-        int nrYears = 0;
+        static int nrYears = 0;
         double distance = 0.0;
         const int margin = 10;
-
+        double[] vals = new double[nrYears];
+        TextBox[] tbs = new TextBox[10];
         bool vb = false;
 
         Color color = Color.LightSteelBlue;
@@ -28,6 +29,7 @@ namespace ProjectPaw_1048_TucaMadalin
         {
             InitializeComponent();
             panel1.Visible = false;
+            panel2.Visible = false;
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace ProjectPaw_1048_TucaMadalin
                 double vMax = vect.Max();
 
                 Brush br = new SolidBrush(color);
-                Rectangle[] recs = new Rectangle[n];
+                Rectangle[] recs = new Rectangle[nrYears];
                 for(int i = 0; i < nrYears; i++)
                 {
                     recs[i] = new Rectangle((int)(rect.Location.X + (i + 1) * distance + i * width),
@@ -68,7 +70,7 @@ namespace ProjectPaw_1048_TucaMadalin
                     g.DrawString(vect[i].ToString(), this.Font, br, new Point((int)(recs[i].Location.X),
                         (int)(recs[i].Location.Y - this.Font.Height)));
                     g.DrawString(refYear++.ToString(), this.Font, br, new Point((int)(recs[i].Location.X),
-                        354));
+                        355));
                     g.FillRectangles(br, recs);
                    
                     
@@ -85,55 +87,129 @@ namespace ProjectPaw_1048_TucaMadalin
         private void loadDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
-            StreamReader sr = new StreamReader("data.txt");
-            string line = null;
-            while((line = sr.ReadLine()) != null)
-            {
-                try
-                {
-                    vect[n] =Convert.ToDouble(line);
-                    n++;
-                    vb = true;
-                }catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            sr.Close();
-            MessageBox.Show("Data lodaded!");
+            panel2.Visible = true;
+            //StreamReader sr = new StreamReader("data.txt");
+            //string line = null;
+            //while((line = sr.ReadLine()) != null)
+            //{
+            //    try
+            //    {
+            //        vect[n] =Convert.ToDouble(line);
+            //        n++;
+            //        vb = true;
+            //    }catch(Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+            //}
+            //sr.Close();
+            //MessageBox.Show("Data lodaded!");
            // Invalidate();
         }
-
+        int leftControl = 1;
         private void yearsBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int firstYear = Convert.ToInt32(tbRef.Text);
+                int lastYear = Convert.ToInt32(tbCurr.Text);
+                nrYears = lastYear - firstYear;
+                for (int i = 0; i < nrYears; i++)
+                {
+                    tbs[i] = new TextBox();
+                    TextBox t1 = new TextBox();
+                    Label l1 = new Label();
+                    panel2.Controls.Add(l1);
+                    panel2.Controls.Add(t1);
+
+                    l1.Top = leftControl * 30;
+                    l1.Left = 10;
+                    l1.ForeColor = System.Drawing.Color.White;
+                    l1.Text = firstYear.ToString();
+                    t1.Top = leftControl * 30;
+                    t1.Left = 130;
+                    tbs[i] = t1;
+
+
+                    firstYear++;
+                    leftControl++;
+                    yearsBtn.Enabled = false;
+                }
+            }
+            catch(FormatException ex)
+            {
+                MessageBox.Show("No input or invalid format!");
+                yearsBtn.Enabled = true;
+            }
+         
            
-            //int refYear = Convert.ToInt32(tbRef.Text);
-            //int currYear = Convert.ToInt32(tbCurr.Text);
-            //int nrYears = currYear - refYear;
-            //int leftControl = 1;
-            //textBoxes[] tbs = new textBoxes[nrYears];
-            //for(int i = 0; i < nrYears; i++)
-            //{
-            //    tbs[i] = new textBoxes();
-            //    tbs[i].setLabelVal((refYear++).ToString());
-            //}
-
-            //for(int i = 0; i < nrYears; i++)
-            //{
-                
-            //    this.Controls.Add(tbs[i]);
-            //    tbs[i].Left = leftControl * 100;
-            //    tbs[i].Top = 349;
-            //    leftControl++;
-                
-            //}
-            panel1.Hide();
-            Invalidate();
+            //panel2.Hide();
+            //Invalidate();
         }
-
         private void textBoxes1_Load(object sender, EventArgs e)
         {
 
+        }
+        private void loadBtn_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                try
+                {
+                    StreamWriter sw = new StreamWriter("data.txt");
+                    for (int i = 0; i < nrYears; i++)
+                    {
+
+                        sw.WriteLine(tbs[i].Text);
+
+                    }
+                   
+                    sw.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                for (int i = 0; i < nrYears; i++)
+                {
+                    vect[i] = Convert.ToDouble(tbs[i].Text);
+                }
+
+                try
+                {
+                    StreamReader sr = new StreamReader("data.txt");
+                    string line = null;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        try
+                        {
+                            vect[n] = Convert.ToDouble(line);
+                            n++;
+                            vb = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+
+                        }
+                    }
+                    sr.Close();
+                    //MessageBox.Show("Data lodaded!");
+                    panel1.Hide();
+                    panel2.Hide();
+                    Invalidate();
+                    MessageBox.Show("Data saved!");
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }catch(FormatException ex)
+            {
+                MessageBox.Show("No data input in each year or invalid format!");
+                
+            }
         }
     }
 }

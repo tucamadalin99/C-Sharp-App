@@ -83,6 +83,7 @@ namespace ProjectPaw_1048_TucaMadalin
             }
 
             st.Close();
+            genTxtBtn.Enabled = false;
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)

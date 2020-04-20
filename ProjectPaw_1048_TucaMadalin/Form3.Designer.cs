@@ -28,34 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.exitBtn = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.yearsBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbCurr = new System.Windows.Forms.TextBox();
             this.tbRef = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.loadBtn = new System.Windows.Forms.Button();
+            this.yearsBtn = new System.Windows.Forms.Button();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // exitBtn
-            // 
-            this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
-            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitBtn.FlatAppearance.BorderSize = 0;
-            this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.exit;
-            this.exitBtn.Location = new System.Drawing.Point(750, -1);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(50, 37);
-            this.exitBtn.TabIndex = 2;
-            this.exitBtn.UseVisualStyleBackColor = false;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // menuStrip1
             // 
@@ -91,20 +79,10 @@
             this.panel1.Controls.Add(this.tbCurr);
             this.panel1.Controls.Add(this.tbRef);
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(135, 74);
+            this.panel1.Location = new System.Drawing.Point(135, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(492, 79);
             this.panel1.TabIndex = 6;
-            // 
-            // yearsBtn
-            // 
-            this.yearsBtn.Location = new System.Drawing.Point(344, 19);
-            this.yearsBtn.Name = "yearsBtn";
-            this.yearsBtn.Size = new System.Drawing.Size(118, 38);
-            this.yearsBtn.TabIndex = 4;
-            this.yearsBtn.Text = "OK";
-            this.yearsBtn.UseVisualStyleBackColor = true;
-            this.yearsBtn.Click += new System.EventHandler(this.yearsBtn_Click);
             // 
             // label2
             // 
@@ -142,12 +120,72 @@
             this.tbRef.Size = new System.Drawing.Size(100, 23);
             this.tbRef.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
+            this.panel2.Controls.Add(this.loadBtn);
+            this.panel2.Location = new System.Drawing.Point(135, 114);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(492, 315);
+            this.panel2.TabIndex = 5;
+            // 
+            // loadBtn
+            // 
+            this.loadBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loadBtn.FlatAppearance.BorderSize = 0;
+            this.loadBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.loadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadBtn.ForeColor = System.Drawing.Color.White;
+            this.loadBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.graphic;
+            this.loadBtn.Location = new System.Drawing.Point(372, 240);
+            this.loadBtn.Name = "loadBtn";
+            this.loadBtn.Size = new System.Drawing.Size(118, 73);
+            this.loadBtn.TabIndex = 5;
+            this.loadBtn.Text = "Show Graph";
+            this.loadBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.loadBtn.UseVisualStyleBackColor = true;
+            this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
+            // 
+            // yearsBtn
+            // 
+            this.yearsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.yearsBtn.FlatAppearance.BorderSize = 0;
+            this.yearsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.yearsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.yearsBtn.ForeColor = System.Drawing.Color.White;
+            this.yearsBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.check;
+            this.yearsBtn.Location = new System.Drawing.Point(371, 6);
+            this.yearsBtn.Name = "yearsBtn";
+            this.yearsBtn.Size = new System.Drawing.Size(118, 68);
+            this.yearsBtn.TabIndex = 4;
+            this.yearsBtn.Text = "OK";
+            this.yearsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.yearsBtn.UseVisualStyleBackColor = true;
+            this.yearsBtn.Click += new System.EventHandler(this.yearsBtn_Click);
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
+            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitBtn.FlatAppearance.BorderSize = 0;
+            this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.exit;
+            this.exitBtn.Location = new System.Drawing.Point(750, -1);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(50, 37);
+            this.exitBtn.TabIndex = 2;
+            this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.menuStrip1);
@@ -160,6 +198,7 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +216,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbCurr;
         private System.Windows.Forms.TextBox tbRef;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button loadBtn;
     }
 }
