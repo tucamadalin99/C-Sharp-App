@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ProiectPAW_Tuca_Madalin_1048;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -210,6 +212,101 @@ namespace ProjectPaw_1048_TucaMadalin
                 MessageBox.Show("No data input in each year or invalid format!");
                 
             }
+        }
+
+        private void changeColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog dlg = new ColorDialog();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                color = dlg.Color;
+            }
+            Invalidate();
+        }
+
+        private void changeFontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontDialog dlg = new FontDialog();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                font = dlg.Font;
+            }
+            Invalidate();
+        }
+
+        private void save(Control c, string denumire)
+        {
+            Bitmap img = new Bitmap(c.Width, c.Height);
+            c.DrawToBitmap(img, new Rectangle(c.ClientRectangle.X, c.ClientRectangle.Y, c.ClientRectangle.Width, c.ClientRectangle.Height));
+            img.Save(denumire);
+            img.Dispose();
+        }
+
+        private void saveAsBmpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            save(this, "GraphReport.bmp");
+            MessageBox.Show("Report saved in bin/Debug!");
+        }
+
+        private void pdPrint(object sender, PrintPageEventArgs e)
+        {
+            if (vb == true)
+            {
+                Graphics g = e.Graphics;
+                Rectangle rect = new Rectangle(e.PageBounds.X + margin, e.PageBounds.Y + 2 * margin,
+                    e.PageBounds.Width - 2 * margin, e.PageBounds.Height - 3 * margin);
+                Pen pen = new Pen(Color.SteelBlue, 3);
+                g.DrawRectangle(pen, rect);
+                //MessageBox.Show(distance.ToString());
+                int refYear = Convert.ToInt32(tbRef.Text);
+                int currYear = Convert.ToInt32(tbCurr.Text);
+                int nrYears = currYear - refYear;
+                double width = rect.Width / nrYears / 3;
+                distance = (rect.Width - nrYears * width) / (n + 1);
+                int leftControl = 1;
+                textBoxes[] tbs = new textBoxes[nrYears];
+                double vMax = vect.Max();
+
+                Brush br = new SolidBrush(color);
+                Rectangle[] recs = new Rectangle[nrYears];
+                for (int i = 0; i < nrYears; i++)
+                {
+                    recs[i] = new Rectangle((int)(rect.Location.X + (i + 1) * distance + i * width),
+                        (int)(rect.Location.Y + rect.Height - vect[i] / vMax * rect.Height),
+                        (int)width,
+                        (int)(vect[i] / vMax * rect.Height));
+                    g.DrawString(vect[i].ToString(), this.Font, br, new Point((int)(recs[i].Location.X),
+                        (int)(recs[i].Location.Y - this.Font.Height)));
+                    g.DrawString(refYear++.ToString(), this.Font, br, new Point((int)(recs[i].Location.X),
+                        355));
+                    g.FillRectangles(br, recs);
+
+
+                    leftControl++;
+
+                }
+                for (int i = 0; i < n - 1; i++)
+                    g.DrawLine(pen, new Point((int)(recs[i].Location.X + width / 2), (int)(recs[i].Location.Y)),
+                         new Point((int)(recs[i + 1].Location.X + width / 2), (int)(recs[i + 1].Location.Y)));
+            }
+        }
+
+        private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(pdPrint);
+            PrintPreviewDialog dlg = new PrintPreviewDialog();
+            dlg.Document = pd;
+            dlg.ShowDialog();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Hide();
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
         }
     }
 }

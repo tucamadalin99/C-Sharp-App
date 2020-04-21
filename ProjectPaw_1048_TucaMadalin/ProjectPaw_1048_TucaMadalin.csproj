@@ -199,6 +199,7 @@
     <None Include="Resources\myAcc.png" />
     <None Include="Resources\graphic.png" />
     <None Include="Resources\correct.png" />
+    <None Include="Resources\left-arrow.png" />
     <Content Include="Resources\Users.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

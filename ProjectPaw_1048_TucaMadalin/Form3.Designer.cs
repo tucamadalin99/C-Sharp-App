@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,12 +38,18 @@
             this.tbCurr = new System.Windows.Forms.TextBox();
             this.tbRef = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsBmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.loadBtn = new System.Windows.Forms.Button();
             this.yearsBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -62,6 +69,7 @@
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
             this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.printPreviewToolStripMenuItem.Text = "Print Preview";
+            this.printPreviewToolStripMenuItem.Click += new System.EventHandler(this.printPreviewToolStripMenuItem_Click);
             // 
             // loadDataToolStripMenuItem
             // 
@@ -129,6 +137,50 @@
             this.panel2.Size = new System.Drawing.Size(492, 315);
             this.panel2.TabIndex = 5;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changeColorToolStripMenuItem,
+            this.changeFontToolStripMenuItem,
+            this.saveAsBmpToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(180, 76);
+            // 
+            // changeColorToolStripMenuItem
+            // 
+            this.changeColorToolStripMenuItem.Name = "changeColorToolStripMenuItem";
+            this.changeColorToolStripMenuItem.Size = new System.Drawing.Size(179, 24);
+            this.changeColorToolStripMenuItem.Text = "Change color";
+            this.changeColorToolStripMenuItem.Click += new System.EventHandler(this.changeColorToolStripMenuItem_Click);
+            // 
+            // changeFontToolStripMenuItem
+            // 
+            this.changeFontToolStripMenuItem.Name = "changeFontToolStripMenuItem";
+            this.changeFontToolStripMenuItem.Size = new System.Drawing.Size(179, 24);
+            this.changeFontToolStripMenuItem.Text = "Change font";
+            this.changeFontToolStripMenuItem.Click += new System.EventHandler(this.changeFontToolStripMenuItem_Click);
+            // 
+            // saveAsBmpToolStripMenuItem
+            // 
+            this.saveAsBmpToolStripMenuItem.Name = "saveAsBmpToolStripMenuItem";
+            this.saveAsBmpToolStripMenuItem.Size = new System.Drawing.Size(179, 24);
+            this.saveAsBmpToolStripMenuItem.Text = "Save as bmp. . .";
+            this.saveAsBmpToolStripMenuItem.Click += new System.EventHandler(this.saveAsBmpToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.left_arrow;
+            this.button1.Location = new System.Drawing.Point(719, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 36);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // loadBtn
             // 
             this.loadBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -166,7 +218,7 @@
             // 
             // exitBtn
             // 
-            this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
+            this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
             this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitBtn.FlatAppearance.BorderSize = 0;
             this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
@@ -185,6 +237,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.exitBtn);
@@ -199,6 +253,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,5 +273,10 @@
         private System.Windows.Forms.TextBox tbRef;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button loadBtn;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem changeColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeFontToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsBmpToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
