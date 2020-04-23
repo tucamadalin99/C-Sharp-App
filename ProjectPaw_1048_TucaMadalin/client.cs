@@ -54,7 +54,7 @@ namespace ProjectPaw_1048_TucaMadalin
                     //////////
                     ///
                     Form2 form2 = new Form2();
-                    form2.Show();
+                    form2.ShowDialog();
                 
                 }
                 else if ((tbuName.Text == "" && tbPassLog.Text == ""))

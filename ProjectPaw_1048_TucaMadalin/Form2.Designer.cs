@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.labelName = new System.Windows.Forms.Label();
-            this.rtb1 = new System.Windows.Forms.RichTextBox();
-            this.exitBtn = new System.Windows.Forms.Button();
             this.accBtn = new System.Windows.Forms.Button();
             this.logBtn = new System.Windows.Forms.Button();
             this.bookedBtn = new System.Windows.Forms.Button();
             this.bookBtn = new System.Windows.Forms.Button();
+            this.labelName = new System.Windows.Forms.Label();
+            this.rtb1 = new System.Windows.Forms.RichTextBox();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.hotels1 = new ProjectPaw_1048_TucaMadalin.hotels();
             this.adminBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -67,44 +67,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(199, 454);
             this.panel2.TabIndex = 4;
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.ForeColor = System.Drawing.Color.White;
-            this.labelName.Location = new System.Drawing.Point(336, 57);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(137, 28);
-            this.labelName.TabIndex = 5;
-            this.labelName.Text = "Welcome, ";
-            this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // rtb1
-            // 
-            this.rtb1.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.rtb1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtb1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb1.Location = new System.Drawing.Point(279, 111);
-            this.rtb1.Name = "rtb1";
-            this.rtb1.Size = new System.Drawing.Size(398, 301);
-            this.rtb1.TabIndex = 7;
-            this.rtb1.Text = "";
-            // 
-            // exitBtn
-            // 
-            this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
-            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitBtn.FlatAppearance.BorderSize = 0;
-            this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.exit;
-            this.exitBtn.Location = new System.Drawing.Point(730, 11);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(50, 37);
-            this.exitBtn.TabIndex = 6;
-            this.exitBtn.UseVisualStyleBackColor = false;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // accBtn
             // 
@@ -178,6 +140,44 @@
             this.bookBtn.UseVisualStyleBackColor = true;
             this.bookBtn.Click += new System.EventHandler(this.bookBtn_Click);
             // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.ForeColor = System.Drawing.Color.White;
+            this.labelName.Location = new System.Drawing.Point(336, 57);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(137, 28);
+            this.labelName.TabIndex = 5;
+            this.labelName.Text = "Welcome, ";
+            this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rtb1
+            // 
+            this.rtb1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.rtb1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtb1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb1.Location = new System.Drawing.Point(279, 111);
+            this.rtb1.Name = "rtb1";
+            this.rtb1.Size = new System.Drawing.Size(398, 301);
+            this.rtb1.TabIndex = 7;
+            this.rtb1.Text = "";
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
+            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitBtn.FlatAppearance.BorderSize = 0;
+            this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.exit;
+            this.exitBtn.Location = new System.Drawing.Point(730, 11);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(50, 37);
+            this.exitBtn.TabIndex = 6;
+            this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
             // hotels1
             // 
             this.hotels1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
@@ -212,12 +212,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
             this.ClientSize = new System.Drawing.Size(782, 424);
             this.Controls.Add(this.hotels1);
-            this.Controls.Add(this.adminBtn);
             this.Controls.Add(this.rtb1);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.adminBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = "Form2";
