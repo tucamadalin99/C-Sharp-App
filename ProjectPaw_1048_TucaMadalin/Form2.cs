@@ -26,7 +26,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
         {
             InitializeComponent();
             rtb1.Visible = false;
-            hotels1.Visible = false;
+            hotels2.Visible = false;
         }
         int mouseX = 0, mouseY = 0;
         bool mouseDown;
@@ -45,7 +45,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
         private void accBtn_Click(object sender, EventArgs e)
         {
             StreamReader sr = new StreamReader("UserList.txt");
-            hotels1.Visible = false;
+            hotels2.Visible = false;
             rtb1.Visible = true;
             rtb1.Text = sr.ReadToEnd();
 
@@ -77,7 +77,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
 
         private void bookBtn_Click(object sender, EventArgs e)
         {
-            hotels1.Visible = true;
+            hotels2.Visible = true;
             rtb1.Visible = false;
         }
 

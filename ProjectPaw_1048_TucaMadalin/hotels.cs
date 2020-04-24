@@ -15,12 +15,43 @@ namespace ProjectPaw_1048_TucaMadalin
     public partial class hotels : UserControl
     {
         List<Cazare> cazariLista = new List<Cazare>();
+
+       
+        
+
+        Cazare[] cazari = new Cazare[10];
         
         
         public hotels()
         {
+           // StreamWriter sw = new StreamWriter("Hoteluri.txt");
             InitializeComponent();
+            cazari[0] = new Cazare("Vraja Marii", "Costinesti", 10, 20, "Dubla/Single", 300.5);
+            cazari[1] = new Cazare("Continental", "Bucuresti", 5, 100, "Dubla/Single/Rezidentiala", 300.5);
+            cazari[2] = new Cazare("Star", "Constanta", 10, 25, "Dubla/Single/Rezidentiala", 300.5);
+            cazari[3] = new Cazare("Casa Duca", "Costinesti", 7, 20, "Dubla/Single", 300.5);
+            cazari[4] = new Cazare("Apex", "Mamaia", 3, 20, "Dubla/Single/Rezidentiala", 300.5);
+            cazari[5] = new Cazare("Lux", "Costinesti", 5, 30, "Dubla/Single", 300.5);
+            cazari[6] = new Cazare("Stefan", "Costinesti", 6, 20, "Dubla/Single", 300.5);
+            cazari[7] = new Cazare("Luxor", "Saturn",3 , 20, "Dubla/Single", 300.5);
+            cazari[8] = new Cazare("Plaja", "Costinesti", 3, 25, "Dubla/Single/Rezidentiala", 300.5);
+            cazari[9] = new Cazare("Polar", "Venus", 5, 40, "Single/Dubla/Rezidentiala", 300.5);
 
+            for(int i = 1; i <= 9; i++)
+            {
+                cazari[i].Id = i;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                
+                cazari[i].genPrice();
+            }
+          //  for(int i = 0; i < 10; i++)
+          //  {
+            //    sw.WriteLine(cazari[i]);
+          //  }
+           // sw.Close();
         }
 
         private void client1_Load(object sender, EventArgs e)
@@ -31,90 +62,110 @@ namespace ProjectPaw_1048_TucaMadalin
 
         private void genTxtBtn_Click(object sender, EventArgs e)
         {
-           
-            double[] preturi = { 345.65, 341.32, 214.53, 321.43 };
-            Cazare c1 = new Cazare("Constinesti", 4, "Casa Duca", 4, "Dubla", preturi, 0);
-            Cazare c2 = new Cazare("Bucuresti", 4, "InterContinental", 4, "Single", preturi, 0);
-            Cazare c3 = new Cazare("Targu Jiu", 4, "Europa", 5, "Single", preturi, 0);
-            Cazare c4 = new Cazare("Bucuresti", 4, "Continental", 5, "Dubla", preturi, 0);
-            Cazare c5 = new Cazare("Bucuresti", 4, "Azure", 5, "Single", preturi, 0);
-            Cazare c6 = new Cazare("Bucuresti", 4, "Linux", 5, "Single", preturi, 0);
-            Cazare[] cazari = {c1,c2,c3,c4,c5,c6};
-
-            //cazariLista.Add(new Cazare("Bucuresti", 4, "Capital3", 5, "Single", preturi, 0));
-
-
-
-            for (int counter = 0; counter < 6; counter++)
-            {
-                cazariLista.Add(cazari[counter]);
-            }
-
-            StreamWriter sr = new StreamWriter("HotelTxtReport.txt");   
-
             
-            foreach(var hotel in cazariLista)
+        }
+
+        private void LoadFromFile(string path)
+        {
+            cazariLista.Clear();
+            try
             {
-                sr.WriteLine(hotel + "\n-------------------------------------\n");
-            }
-            sr.Close();
-            MessageBox.Show("Text report generated in bin/Debug!");
+                var lines = File.ReadAllLines(path);
 
-            StreamReader st = new StreamReader("HotelTxtReport.txt");
-            List<ListView> listOfLists = new List<ListView>();
-            listOfLists.Add(listView1);
-            listOfLists.Add(listView2);
-            listOfLists.Add(listView3);
-            listOfLists.Add(listView4);
-            listOfLists.Add(listView5);
-            listOfLists.Add(listView6);
-            int i = 0;
-            foreach(var l in listOfLists)
+                for (int i = 0; i < lines.Length; i += 7)
+                {
+                    cazariLista.Add(new Cazare(
+                        den: lines[i],
+                        l: lines[i + 1],
+                        nrZ: Int32.Parse(lines[i + 2]),
+                        nrC: Int32.Parse(lines[i + 3]),
+                        tipC: lines[i + 4],
+                        pM: Double.Parse(lines[i + 5])
+                        ));
+                }
+
+                foreach (var c in cazariLista)
+                {
+                    c.genPrice();
+                }
+            }catch(Exception ex)
             {
-                
-                    l.Items.Add("Name:" + cazari[i].Denumire);
-                    l.Items.Add("Location: " + cazari[i].Locatie);
-                    l.Items.Add("Days: " + cazari[i].NrZile.ToString());
-                    l.Items.Add("Rooms: " +cazari[i].NrCamera.ToString());
-                    l.Items.Add("Price: " + cazari[i].Preturi[0].ToString());
-                   // l.Items.Add(cazari[i].PretMediu.ToString());
-
-                i++;
+                MessageBox.Show(ex.Message);
             }
-
-            st.Close();
-            genTxtBtn.Enabled = false;
-        }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            listView1.Visible = false;
-        }
-
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            listView2.Visible = false;
-        }
-
-        private void toolStripMenuItem4_Click(object sender, EventArgs e)
-        {
-            listView3.Visible = false;
-        }
-
-        private void toolStripMenuItem5_Click(object sender, EventArgs e)
-        {
-            listView4.Visible = false;
-        }
-
-        private void toolStripMenuItem6_Click(object sender, EventArgs e)
-        {
-            listView5.Visible = false;
-        }
-
-        private void toolStripMenuItem7_Click(object sender, EventArgs e)
-        {
-            listView6.Visible = false;
+            
         }
         
+        private void displayInList()
+        {
+            listView1.Items.Clear();
+
+            foreach(var c in cazariLista)
+            {
+                var item = new ListViewItem(new string[]
+                {
+                (c.Id - 39).ToString(),
+                c.Denumire,
+                c.Locatie,
+                c.NrZile.ToString(),
+                c.NrCamera.ToString(),
+                c.PretMediu.ToString()
+                });
+                item.ForeColor = System.Drawing.Color.White;
+                item.Tag = c;
+
+                listView1.Items.Add(item);
+            }
+
+        }
+
+
+        private void loadFromFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            using (var dialog = new OpenFileDialog())
+            {
+                dialog.Filter = "Fișiere text (*.txt)|*.txt|Toate fișierele (*.*)|*.*";
+                if (dialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    LoadFromFile(dialog.FileName);
+                    displayInList();
+                }
+            }
+        }
+
+        private void deleteItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("No selected items to delete from list!");
+                return;
+
+            }
+
+            var c = (Cazare)listView1.SelectedItems[0].Tag;
+            var rezultat = MessageBox.Show(this,
+                $"Are you sure you want to delete '{c.Denumire}'?",
+                "Delete item",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if(rezultat == DialogResult.Yes)
+            {
+                cazariLista.Remove(c);
+                displayInList();
+            }
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("No item selected!");
+                return;
+            }
+
+            var item = listView1.SelectedItems;
+            MessageBox.Show(item.ToString());
+        }
     }
 }

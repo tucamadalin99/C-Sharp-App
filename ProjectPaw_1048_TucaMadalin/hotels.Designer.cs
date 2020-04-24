@@ -30,42 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.exitBtn = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.genTxtBtn = new System.Windows.Forms.Button();
-            this.pHotel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pHotel2 = new System.Windows.Forms.Panel();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pHotel3 = new System.Windows.Forms.Panel();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pHotel4 = new System.Windows.Forms.Panel();
-            this.listView4 = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pHotel5 = new System.Windows.Forms.Panel();
-            this.listView5 = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pHotel6 = new System.Windows.Forms.Panel();
-            this.listView6 = new System.Windows.Forms.ListView();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteHotelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.idCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.denCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.locCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nrCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pretCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.loadFromFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.writeToFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nrZCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.deleteItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1.SuspendLayout();
-            this.pHotel1.SuspendLayout();
-            this.pHotel2.SuspendLayout();
-            this.pHotel3.SuspendLayout();
-            this.pHotel4.SuspendLayout();
-            this.pHotel5.SuspendLayout();
-            this.pHotel6.SuspendLayout();
-            this.contextMenuStrip2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // exitBtn
@@ -82,22 +62,6 @@
             this.exitBtn.TabIndex = 7;
             this.exitBtn.UseVisualStyleBackColor = false;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.genTxtBtn);
-            this.flowLayoutPanel1.Controls.Add(this.pHotel1);
-            this.flowLayoutPanel1.Controls.Add(this.pHotel2);
-            this.flowLayoutPanel1.Controls.Add(this.pHotel3);
-            this.flowLayoutPanel1.Controls.Add(this.pHotel4);
-            this.flowLayoutPanel1.Controls.Add(this.pHotel5);
-            this.flowLayoutPanel1.Controls.Add(this.pHotel6);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(619, 392);
-            this.flowLayoutPanel1.TabIndex = 8;
-            // 
             // genTxtBtn
             // 
             this.genTxtBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
@@ -110,261 +74,123 @@
             this.genTxtBtn.ForeColor = System.Drawing.Color.White;
             this.genTxtBtn.Location = new System.Drawing.Point(3, 3);
             this.genTxtBtn.Name = "genTxtBtn";
-            this.genTxtBtn.Size = new System.Drawing.Size(549, 28);
+            this.genTxtBtn.Size = new System.Drawing.Size(827, 34);
             this.genTxtBtn.TabIndex = 0;
             this.genTxtBtn.Text = "Generate text report";
             this.genTxtBtn.UseVisualStyleBackColor = false;
             this.genTxtBtn.Click += new System.EventHandler(this.genTxtBtn_Click);
             // 
-            // pHotel1
+            // flowLayoutPanel1
             // 
-            this.pHotel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
-            this.pHotel1.Controls.Add(this.listView1);
-            this.pHotel1.Location = new System.Drawing.Point(3, 37);
-            this.pHotel1.Name = "pHotel1";
-            this.pHotel1.Size = new System.Drawing.Size(179, 237);
-            this.pHotel1.TabIndex = 6;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.genTxtBtn);
+            this.flowLayoutPanel1.Controls.Add(this.listView1);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(855, 391);
+            this.flowLayoutPanel1.TabIndex = 8;
             // 
             // listView1
             // 
-            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.listView1.ForeColor = System.Drawing.Color.White;
+            this.idCol,
+            this.denCol,
+            this.locCol,
+            this.nrZCol,
+            this.nrCol,
+            this.pretCol});
+            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 17);
+            this.listView1.Location = new System.Drawing.Point(3, 43);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(146, 199);
-            this.listView1.TabIndex = 9;
+            this.listView1.Size = new System.Drawing.Size(827, 346);
+            this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // idCol
             // 
-            this.columnHeader1.Text = "Hotel";
-            this.columnHeader1.Width = 150;
+            this.idCol.Text = "Index";
+            this.idCol.Width = 48;
             // 
-            // pHotel2
+            // denCol
             // 
-            this.pHotel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
-            this.pHotel2.Controls.Add(this.listView2);
-            this.pHotel2.Location = new System.Drawing.Point(188, 37);
-            this.pHotel2.Name = "pHotel2";
-            this.pHotel2.Size = new System.Drawing.Size(179, 237);
-            this.pHotel2.TabIndex = 3;
+            this.denCol.Text = "Denumire";
+            this.denCol.Width = 276;
             // 
-            // listView2
+            // locCol
             // 
-            this.listView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2});
-            this.listView2.ForeColor = System.Drawing.Color.White;
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(16, 19);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(146, 199);
-            this.listView2.TabIndex = 10;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.locCol.Text = "Locatie";
+            this.locCol.Width = 116;
             // 
-            // columnHeader2
+            // nrCol
             // 
-            this.columnHeader2.Text = "Hotel";
-            this.columnHeader2.Width = 150;
+            this.nrCol.DisplayIndex = 4;
+            this.nrCol.Text = "Nr.Camere";
+            this.nrCol.Width = 87;
             // 
-            // pHotel3
+            // pretCol
             // 
-            this.pHotel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
-            this.pHotel3.Controls.Add(this.listView3);
-            this.pHotel3.Location = new System.Drawing.Point(373, 37);
-            this.pHotel3.Name = "pHotel3";
-            this.pHotel3.Size = new System.Drawing.Size(179, 237);
-            this.pHotel3.TabIndex = 4;
+            this.pretCol.DisplayIndex = 5;
+            this.pretCol.Text = "Pret Mediu";
+            this.pretCol.Width = 78;
             // 
-            // listView3
+            // contextMenuStrip1
             // 
-            this.listView3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3});
-            this.listView3.ForeColor = System.Drawing.Color.White;
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(16, 19);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(146, 199);
-            this.listView3.TabIndex = 10;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadFromFileToolStripMenuItem,
+            this.writeToFileToolStripMenuItem,
+            this.deleteItemToolStripMenuItem,
+            this.showDetailsToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 128);
             // 
-            // columnHeader3
+            // loadFromFileToolStripMenuItem
             // 
-            this.columnHeader3.Text = "Hotel";
-            this.columnHeader3.Width = 150;
+            this.loadFromFileToolStripMenuItem.Name = "loadFromFileToolStripMenuItem";
+            this.loadFromFileToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
+            this.loadFromFileToolStripMenuItem.Text = "Load from file";
+            this.loadFromFileToolStripMenuItem.Click += new System.EventHandler(this.loadFromFileToolStripMenuItem_Click);
             // 
-            // pHotel4
+            // writeToFileToolStripMenuItem
             // 
-            this.pHotel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
-            this.pHotel4.Controls.Add(this.listView4);
-            this.pHotel4.Location = new System.Drawing.Point(3, 280);
-            this.pHotel4.Name = "pHotel4";
-            this.pHotel4.Size = new System.Drawing.Size(179, 237);
-            this.pHotel4.TabIndex = 3;
+            this.writeToFileToolStripMenuItem.Name = "writeToFileToolStripMenuItem";
+            this.writeToFileToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
+            this.writeToFileToolStripMenuItem.Text = "Write to file";
             // 
-            // listView4
+            // nrZCol
             // 
-            this.listView4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
-            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4});
-            this.listView4.ForeColor = System.Drawing.Color.White;
-            this.listView4.HideSelection = false;
-            this.listView4.Location = new System.Drawing.Point(16, 19);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(146, 199);
-            this.listView4.TabIndex = 10;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.Details;
+            this.nrZCol.DisplayIndex = 3;
+            this.nrZCol.Text = "Nr. Zile";
             // 
-            // columnHeader4
+            // deleteItemToolStripMenuItem
             // 
-            this.columnHeader4.Text = "Hotel";
-            this.columnHeader4.Width = 150;
+            this.deleteItemToolStripMenuItem.Name = "deleteItemToolStripMenuItem";
+            this.deleteItemToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteItemToolStripMenuItem.Text = "Delete Item";
+            this.deleteItemToolStripMenuItem.Click += new System.EventHandler(this.deleteItemToolStripMenuItem_Click);
             // 
-            // pHotel5
+            // showDetailsToolStripMenuItem
             // 
-            this.pHotel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
-            this.pHotel5.Controls.Add(this.listView5);
-            this.pHotel5.Location = new System.Drawing.Point(188, 280);
-            this.pHotel5.Name = "pHotel5";
-            this.pHotel5.Size = new System.Drawing.Size(179, 237);
-            this.pHotel5.TabIndex = 7;
-            // 
-            // listView5
-            // 
-            this.listView5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
-            this.listView5.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5});
-            this.listView5.ForeColor = System.Drawing.Color.White;
-            this.listView5.HideSelection = false;
-            this.listView5.Location = new System.Drawing.Point(16, 19);
-            this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(146, 199);
-            this.listView5.TabIndex = 10;
-            this.listView5.UseCompatibleStateImageBehavior = false;
-            this.listView5.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Hotel";
-            this.columnHeader5.Width = 150;
-            // 
-            // pHotel6
-            // 
-            this.pHotel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(83)))), ((int)(((byte)(100)))));
-            this.pHotel6.Controls.Add(this.listView6);
-            this.pHotel6.Location = new System.Drawing.Point(373, 280);
-            this.pHotel6.Name = "pHotel6";
-            this.pHotel6.Size = new System.Drawing.Size(179, 237);
-            this.pHotel6.TabIndex = 8;
-            // 
-            // listView6
-            // 
-            this.listView6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
-            this.listView6.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6});
-            this.listView6.ForeColor = System.Drawing.Color.White;
-            this.listView6.HideSelection = false;
-            this.listView6.Location = new System.Drawing.Point(16, 19);
-            this.listView6.Name = "listView6";
-            this.listView6.Size = new System.Drawing.Size(146, 199);
-            this.listView6.TabIndex = 10;
-            this.listView6.UseCompatibleStateImageBehavior = false;
-            this.listView6.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Hotel";
-            this.columnHeader6.Width = 150;
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteHotelToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(211, 56);
-            // 
-            // deleteHotelToolStripMenuItem
-            // 
-            this.deleteHotelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5,
-            this.toolStripMenuItem6,
-            this.toolStripMenuItem7});
-            this.deleteHotelToolStripMenuItem.Name = "deleteHotelToolStripMenuItem";
-            this.deleteHotelToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.deleteHotelToolStripMenuItem.Text = "Delete hotel";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(216, 26);
-            this.toolStripMenuItem2.Text = "Hotel 1";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(216, 26);
-            this.toolStripMenuItem3.Text = "Hotel 2";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(216, 26);
-            this.toolStripMenuItem4.Text = "Hotel 3";
-            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(216, 26);
-            this.toolStripMenuItem5.Text = "Hotel 4";
-            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(216, 26);
-            this.toolStripMenuItem6.Text = "Hotel 5";
-            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
-            // 
-            // toolStripMenuItem7
-            // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(216, 26);
-            this.toolStripMenuItem7.Text = "Hotel 6";
-            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
+            this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.showDetailsToolStripMenuItem.Text = "Show Details";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // hotels
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
-            this.ContextMenuStrip = this.contextMenuStrip2;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.exitBtn);
             this.Name = "hotels";
-            this.Size = new System.Drawing.Size(619, 392);
+            this.Size = new System.Drawing.Size(855, 391);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.pHotel1.ResumeLayout(false);
-            this.pHotel2.ResumeLayout(false);
-            this.pHotel3.ResumeLayout(false);
-            this.pHotel4.ResumeLayout(false);
-            this.pHotel5.ResumeLayout(false);
-            this.pHotel6.ResumeLayout(false);
-            this.contextMenuStrip2.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -372,33 +198,19 @@
         #endregion
 
         private System.Windows.Forms.Button exitBtn;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel pHotel1;
-        private System.Windows.Forms.Panel pHotel2;
-        private System.Windows.Forms.Panel pHotel3;
-        private System.Windows.Forms.Panel pHotel4;
-        private System.Windows.Forms.Panel pHotel5;
-        private System.Windows.Forms.Panel pHotel6;
         private System.Windows.Forms.Button genTxtBtn;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.ListView listView4;
-        private System.Windows.Forms.ListView listView5;
-        private System.Windows.Forms.ListView listView6;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem deleteHotelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+        private System.Windows.Forms.ColumnHeader idCol;
+        private System.Windows.Forms.ColumnHeader denCol;
+        private System.Windows.Forms.ColumnHeader locCol;
+        private System.Windows.Forms.ColumnHeader nrCol;
+        private System.Windows.Forms.ColumnHeader pretCol;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem loadFromFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem writeToFileToolStripMenuItem;
+        private System.Windows.Forms.ColumnHeader nrZCol;
+        private System.Windows.Forms.ToolStripMenuItem deleteItemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
     }
 }
