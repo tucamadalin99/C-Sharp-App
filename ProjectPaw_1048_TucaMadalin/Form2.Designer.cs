@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.accBtn = new System.Windows.Forms.Button();
@@ -39,8 +38,8 @@
             this.rtb1 = new System.Windows.Forms.RichTextBox();
             this.exitBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
-            this.hotels1 = new ProjectPaw_1048_TucaMadalin.hotels();
             this.hotels2 = new ProjectPaw_1048_TucaMadalin.hotels();
+            this.hotels1 = new ProjectPaw_1048_TucaMadalin.hotels();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,6 +121,7 @@
             this.bookedBtn.Text = "My bookings";
             this.bookedBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bookedBtn.UseVisualStyleBackColor = false;
+            this.bookedBtn.Click += new System.EventHandler(this.bookedBtn_Click);
             // 
             // bookBtn
             // 
@@ -198,6 +198,14 @@
             this.adminBtn.UseVisualStyleBackColor = false;
             this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click);
             // 
+            // hotels2
+            // 
+            this.hotels2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
+            this.hotels2.Location = new System.Drawing.Point(193, 0);
+            this.hotels2.Name = "hotels2";
+            this.hotels2.Size = new System.Drawing.Size(751, 447);
+            this.hotels2.TabIndex = 10;
+            // 
             // hotels1
             // 
             this.hotels1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
@@ -205,14 +213,6 @@
             this.hotels1.Name = "hotels1";
             this.hotels1.Size = new System.Drawing.Size(588, 409);
             this.hotels1.TabIndex = 8;
-            // 
-            // hotels2
-            // 
-            this.hotels2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
-            this.hotels2.Location = new System.Drawing.Point(200, 12);
-            this.hotels2.Name = "hotels2";
-            this.hotels2.Size = new System.Drawing.Size(744, 400);
-            this.hotels2.TabIndex = 10;
             // 
             // Form2
             // 

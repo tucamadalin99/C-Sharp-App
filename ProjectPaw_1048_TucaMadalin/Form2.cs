@@ -14,7 +14,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
 {
     public partial class Form2 : Form
     {
-
+        
         private readonly firstPanel _form1;
         public Form2(firstPanel form1)
         {
@@ -27,6 +27,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
             InitializeComponent();
             rtb1.Visible = false;
             hotels2.Visible = false;
+ 
         }
         int mouseX = 0, mouseY = 0;
         bool mouseDown;
@@ -79,6 +80,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
         {
             hotels2.Visible = true;
             rtb1.Visible = false;
+           
         }
 
         private void adminBtn_Click(object sender, EventArgs e)
@@ -86,6 +88,15 @@ namespace ProiectPAW_Tuca_Madalin_1048
             this.Hide();
             Form3 form3 = new Form3();
             form3.ShowDialog();
+        }
+
+        private void bookedBtn_Click(object sender, EventArgs e)
+        {
+            hotels2.Visible = false;
+            Form4 f4 = new Form4();
+            f4.ShowDialog();
+            
+
         }
 
         private void panel3_MouseUp(object sender, MouseEventArgs e)

@@ -36,14 +36,15 @@
             this.idCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.denCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.locCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nrZCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nrCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pretCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.loadFromFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.writeToFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nrZCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.deleteItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +77,7 @@
             this.genTxtBtn.Name = "genTxtBtn";
             this.genTxtBtn.Size = new System.Drawing.Size(827, 34);
             this.genTxtBtn.TabIndex = 0;
-            this.genTxtBtn.Text = "Generate text report";
+            this.genTxtBtn.Text = "Drag to Generate text report";
             this.genTxtBtn.UseVisualStyleBackColor = false;
             this.genTxtBtn.Click += new System.EventHandler(this.genTxtBtn_Click);
             // 
@@ -105,10 +106,11 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(3, 43);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(827, 346);
+            this.listView1.Size = new System.Drawing.Size(827, 376);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+      
             // 
             // idCol
             // 
@@ -125,15 +127,17 @@
             this.locCol.Text = "Locatie";
             this.locCol.Width = 116;
             // 
+            // nrZCol
+            // 
+            this.nrZCol.Text = "Nr. Zile";
+            // 
             // nrCol
             // 
-            this.nrCol.DisplayIndex = 4;
             this.nrCol.Text = "Nr.Camere";
             this.nrCol.Width = 87;
             // 
             // pretCol
             // 
-            this.pretCol.DisplayIndex = 5;
             this.pretCol.Text = "Pret Mediu";
             this.pretCol.Width = 78;
             // 
@@ -144,9 +148,10 @@
             this.loadFromFileToolStripMenuItem,
             this.writeToFileToolStripMenuItem,
             this.deleteItemToolStripMenuItem,
-            this.showDetailsToolStripMenuItem});
+            this.showDetailsToolStripMenuItem,
+            this.bookSelectedToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 128);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(173, 124);
             // 
             // loadFromFileToolStripMenuItem
             // 
@@ -161,24 +166,26 @@
             this.writeToFileToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.writeToFileToolStripMenuItem.Text = "Write to file";
             // 
-            // nrZCol
-            // 
-            this.nrZCol.DisplayIndex = 3;
-            this.nrZCol.Text = "Nr. Zile";
-            // 
             // deleteItemToolStripMenuItem
             // 
             this.deleteItemToolStripMenuItem.Name = "deleteItemToolStripMenuItem";
-            this.deleteItemToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteItemToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.deleteItemToolStripMenuItem.Text = "Delete Item";
             this.deleteItemToolStripMenuItem.Click += new System.EventHandler(this.deleteItemToolStripMenuItem_Click);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
+            // 
+            // bookSelectedToolStripMenuItem
+            // 
+            this.bookSelectedToolStripMenuItem.Name = "bookSelectedToolStripMenuItem";
+            this.bookSelectedToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
+            this.bookSelectedToolStripMenuItem.Text = "Book selected";
+            this.bookSelectedToolStripMenuItem.Click += new System.EventHandler(this.bookSelectedToolStripMenuItem_Click);
             // 
             // hotels
             // 
@@ -212,5 +219,6 @@
         private System.Windows.Forms.ColumnHeader nrZCol;
         private System.Windows.Forms.ToolStripMenuItem deleteItemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bookSelectedToolStripMenuItem;
     }
 }

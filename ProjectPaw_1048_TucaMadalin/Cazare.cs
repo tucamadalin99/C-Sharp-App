@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProiectPAW_Tuca_Madalin_1048
 {
-    class Cazare : ICloneable, IComparable, IPretMediu
+    public class Cazare : ICloneable, IComparable, IPretMediu
     {
         private string locatie;
         private int nrZile;

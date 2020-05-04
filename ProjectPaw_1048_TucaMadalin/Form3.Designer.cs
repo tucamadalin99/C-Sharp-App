@@ -33,18 +33,18 @@
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.yearsBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbCurr = new System.Windows.Forms.TextBox();
             this.tbRef = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.loadBtn = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsBmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.loadBtn = new System.Windows.Forms.Button();
-            this.yearsBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -92,6 +92,23 @@
             this.panel1.Size = new System.Drawing.Size(492, 79);
             this.panel1.TabIndex = 6;
             // 
+            // yearsBtn
+            // 
+            this.yearsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.yearsBtn.FlatAppearance.BorderSize = 0;
+            this.yearsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.yearsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.yearsBtn.ForeColor = System.Drawing.Color.White;
+            this.yearsBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.check;
+            this.yearsBtn.Location = new System.Drawing.Point(371, 6);
+            this.yearsBtn.Name = "yearsBtn";
+            this.yearsBtn.Size = new System.Drawing.Size(118, 68);
+            this.yearsBtn.TabIndex = 4;
+            this.yearsBtn.Text = "OK";
+            this.yearsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.yearsBtn.UseVisualStyleBackColor = true;
+            this.yearsBtn.Click += new System.EventHandler(this.yearsBtn_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -137,6 +154,24 @@
             this.panel2.Size = new System.Drawing.Size(492, 315);
             this.panel2.TabIndex = 5;
             // 
+            // loadBtn
+            // 
+            this.loadBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loadBtn.FlatAppearance.BorderSize = 0;
+            this.loadBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.loadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadBtn.ForeColor = System.Drawing.Color.White;
+            this.loadBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.graphic;
+            this.loadBtn.Location = new System.Drawing.Point(372, 240);
+            this.loadBtn.Name = "loadBtn";
+            this.loadBtn.Size = new System.Drawing.Size(118, 73);
+            this.loadBtn.TabIndex = 5;
+            this.loadBtn.Text = "Show Graph";
+            this.loadBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.loadBtn.UseVisualStyleBackColor = true;
+            this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -174,47 +209,12 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.left_arrow;
-            this.button1.Location = new System.Drawing.Point(719, 0);
+            this.button1.Location = new System.Drawing.Point(761, 391);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(39, 36);
             this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // loadBtn
-            // 
-            this.loadBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loadBtn.FlatAppearance.BorderSize = 0;
-            this.loadBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.loadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loadBtn.ForeColor = System.Drawing.Color.White;
-            this.loadBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.graphic;
-            this.loadBtn.Location = new System.Drawing.Point(372, 240);
-            this.loadBtn.Name = "loadBtn";
-            this.loadBtn.Size = new System.Drawing.Size(118, 73);
-            this.loadBtn.TabIndex = 5;
-            this.loadBtn.Text = "Show Graph";
-            this.loadBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.loadBtn.UseVisualStyleBackColor = true;
-            this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
-            // 
-            // yearsBtn
-            // 
-            this.yearsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.yearsBtn.FlatAppearance.BorderSize = 0;
-            this.yearsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.yearsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.yearsBtn.ForeColor = System.Drawing.Color.White;
-            this.yearsBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.check;
-            this.yearsBtn.Location = new System.Drawing.Point(371, 6);
-            this.yearsBtn.Name = "yearsBtn";
-            this.yearsBtn.Size = new System.Drawing.Size(118, 68);
-            this.yearsBtn.TabIndex = 4;
-            this.yearsBtn.Text = "OK";
-            this.yearsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.yearsBtn.UseVisualStyleBackColor = true;
-            this.yearsBtn.Click += new System.EventHandler(this.yearsBtn_Click);
             // 
             // exitBtn
             // 
