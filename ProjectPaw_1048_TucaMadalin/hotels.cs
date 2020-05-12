@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProiectPAW_Tuca_Madalin_1048;
 using System.IO;
+using System.Data.OleDb;
+
 
 namespace ProjectPaw_1048_TucaMadalin
 {
@@ -16,11 +18,11 @@ namespace ProjectPaw_1048_TucaMadalin
     {
         private List<Cazare> cazariLista = new List<Cazare>();
         List<Cazare> cazariSelected = new List<Cazare>();
-
+        string connString;
 
 
         Cazare[] cazari = new Cazare[10];
-
+        
         internal List<Cazare> CazariLista { get => cazariLista; set => cazariLista = value; }
 
         public hotels()
@@ -28,6 +30,7 @@ namespace ProjectPaw_1048_TucaMadalin
 
             // StreamWriter sw = new StreamWriter("Hoteluri.txt");
             InitializeComponent();
+            connString = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = Cazari.accdb";
             cazari[0] = new Cazare("Vraja Marii", "Costinesti", 10, 20, "Dubla/Single", 300.5);
             cazari[1] = new Cazare("Continental", "Bucuresti", 5, 100, "Dubla/Single/Rezidentiala", 300.5);
             cazari[2] = new Cazare("Star", "Constanta", 10, 25, "Dubla/Single/Rezidentiala", 300.5);
@@ -67,24 +70,31 @@ namespace ProjectPaw_1048_TucaMadalin
 
         }
 
-        private void LoadFromFile(string path)
+        private void LoadFromDb()
         {
-            CazariLista.Clear();
+
+            OleDbConnection conn = new OleDbConnection(connString);
             try
             {
-                var lines = File.ReadAllLines(path);
+               
+                CazariLista.Clear();
+                conn.Open();
+                OleDbCommand com = new OleDbCommand("SELECT * FROM Cazari");
+                com.Connection = conn;
+                OleDbDataReader read = com.ExecuteReader();
 
-                for (int i = 0; i < lines.Length; i += 7)
+                while (read.Read())
                 {
                     CazariLista.Add(new Cazare(
-                        den: lines[i],
-                        l: lines[i + 1],
-                        nrZ: Int32.Parse(lines[i + 2]),
-                        nrC: Int32.Parse(lines[i + 3]),
-                        tipC: lines[i + 4],
-                        pM: Double.Parse(lines[i + 5])
-                        ));
+                                            den: read["Denumire"].ToString(),
+                                            l: read["Locatie"].ToString(),
+                                            nrZ: Int32.Parse(read["NrZile"].ToString()),
+                                            nrC: Int32.Parse(read["NrCamere"].ToString()),
+                                            tipC: read["TipCazare"].ToString(),
+                                            pM: Double.Parse(read["PretMediu"].ToString())
+                                            ));
                 }
+        
 
                 foreach (var c in CazariLista)
                 {
@@ -95,6 +105,10 @@ namespace ProjectPaw_1048_TucaMadalin
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
             }
 
         }
@@ -126,15 +140,11 @@ namespace ProjectPaw_1048_TucaMadalin
         private void loadFromFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            using (var dialog = new OpenFileDialog())
-            {
-                dialog.Filter = "Fișiere text (*.txt)|*.txt|Toate fișierele (*.*)|*.*";
-                if (dialog.ShowDialog(this) == DialogResult.OK)
-                {
-                    LoadFromFile(dialog.FileName);
+            
+                    LoadFromDb();
                     displayInList();
-                }
-            }
+            MessageBox.Show("Data from database loaded!");
+            
         }
 
         private void deleteItemToolStripMenuItem_Click(object sender, EventArgs e)
@@ -174,36 +184,112 @@ namespace ProjectPaw_1048_TucaMadalin
 
         private void bookSelectedToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string connStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = CazariEfectuate.accdb";
+            OleDbConnection conex = new OleDbConnection(connStr);
             cazariSelected.Clear();
-
-            if (listView1.SelectedItems.Count == 0)
+            try
             {
-                MessageBox.Show("No selected items selected to book!");
-                return;
-
-            }
-
-            Form4 f4 = new Form4();
-            var c = (Cazare)listView1.SelectedItems[0].Tag;
-            var rezultat = MessageBox.Show(this,
-                $"Do you want to book: '{c.Denumire}'?",
-                "Book selected",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-
-            if (rezultat == DialogResult.Yes)
-            {
-                var item = (Cazare)listView1.SelectedItems[0].Tag;
-                cazariSelected.Add(item);
-                StreamWriter sw = new StreamWriter("BookedHotels.txt");
-                foreach (var caz in cazariSelected)
+                conex.Open();
+                OleDbCommand com = new OleDbCommand();
+                com.Connection = conex;
+                int id;
+                var rezultat = MessageBox.Show(this,
+               $"Do you want to book: '{listView1.SelectedItems[0].SubItems[1].Text}'?",
+               "Book selected",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Warning);
+                if (rezultat == DialogResult.Yes)
                 {
-                    sw.WriteLine(caz);
+
+                    com.CommandText = "Select COUNT(*) from CazariEfectuate";
+                    if (Convert.ToInt32(com.ExecuteScalar()) == 0)
+                    {
+                        id = 0;
+                    }
+                    else { id = Convert.ToInt32(com.ExecuteScalar()); }
+
+                    //com.CommandText = "SELECT (max)ID FROM CazariEfectuate";
+                    //BUGS
+                    
+                    foreach (ListViewItem itm in listView1.SelectedItems)
+                    {
+                        com.CommandText = "INSERT into CazariEfectuate values(?,?,?,?,?,?,?)";
+                        com.Parameters.Add("ID", OleDbType.Integer).Value = id + 1;
+                        com.Parameters.Add("Denumire", OleDbType.Char, 30).Value = itm.SubItems[1].Text;
+                        com.Parameters.Add("Locatie", OleDbType.Char, 30).Value = itm.SubItems[2].Text;
+                        com.Parameters.Add("NrZile", OleDbType.Integer).Value = Convert.ToInt32(itm.SubItems[3].Text);
+                        com.Parameters.Add("NrCamere", OleDbType.Integer).Value = Convert.ToInt32(itm.SubItems[4].Text);
+                        com.Parameters.Add("PretMediu", OleDbType.Double).Value = Convert.ToDouble(itm.SubItems[5].Text);
+                        com.Parameters.Add("Locatie", OleDbType.Char, 30).Value = "Single";
+                        com.ExecuteNonQuery();
+                    }
+                    conex.Close();
+
                 }
-                sw.Close();
+                else
+                {
+                    throw new Exception("Nothing was booked!");
+                }
+               
+                if (listView1.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("No selected items selected to book!");
+                    return;
+
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
+
 
         }
 
+      
+        private void listView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (listView1.Items.Count > 0)
+                try { listView1.DoDragDrop(listView1.SelectedItems, DragDropEffects.Copy | DragDropEffects.Move); }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No string selected!");
+                }
+        }
+
+        private void genTxtBtn_DragDrop(object sender, DragEventArgs e)
+        {
+            listView1.SelectedItems[0].Remove();
+        }
+
+        private void genTxtBtn_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.None;
+            if (((e.KeyState & 8) == 8) && (e.AllowedEffect & DragDropEffects.Copy) == DragDropEffects.Copy)
+                e.Effect = DragDropEffects.Copy;
+            else
+                if ((e.AllowedEffect & DragDropEffects.Move) == DragDropEffects.Move)
+                e.Effect = DragDropEffects.Move;
+        }
+
+        private void hotels_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel1_DragDrop(object sender, DragEventArgs e)
+        {
+           
+            listView1.SelectedItems[0].Remove();
+        }
+
+        private void panel1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.None;
+            if (((e.KeyState & 8) == 8) && (e.AllowedEffect & DragDropEffects.Copy) == DragDropEffects.Copy)
+                e.Effect = DragDropEffects.Copy;
+            else
+                if ((e.AllowedEffect & DragDropEffects.Move) == DragDropEffects.Move)
+                e.Effect = DragDropEffects.Move;
+        }
     }
 }

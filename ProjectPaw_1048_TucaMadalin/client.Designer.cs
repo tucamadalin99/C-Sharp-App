@@ -101,6 +101,7 @@
             this.logBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.logBtn.UseVisualStyleBackColor = false;
             this.logBtn.Click += new System.EventHandler(this.logBtn_Click);
+            this.logBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.logBtn_KeyPress);
             // 
             // client
             // 

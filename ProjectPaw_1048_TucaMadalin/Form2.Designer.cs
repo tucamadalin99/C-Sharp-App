@@ -157,10 +157,11 @@
             // 
             this.rtb1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.rtb1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtb1.Enabled = false;
             this.rtb1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtb1.Location = new System.Drawing.Point(370, 111);
             this.rtb1.Name = "rtb1";
-            this.rtb1.Size = new System.Drawing.Size(398, 301);
+            this.rtb1.Size = new System.Drawing.Size(398, 142);
             this.rtb1.TabIndex = 7;
             this.rtb1.Text = "";
             // 
@@ -222,11 +223,11 @@
             this.ClientSize = new System.Drawing.Size(944, 424);
             this.Controls.Add(this.hotels2);
             this.Controls.Add(this.exitBtn);
-            this.Controls.Add(this.labelName);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.adminBtn);
             this.Controls.Add(this.rtb1);
+            this.Controls.Add(this.labelName);
+            this.Controls.Add(this.adminBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = "Form2";

@@ -53,9 +53,10 @@
             // 
             // UserRTB
             // 
+            this.UserRTB.Enabled = false;
             this.UserRTB.Location = new System.Drawing.Point(112, 137);
             this.UserRTB.Name = "UserRTB";
-            this.UserRTB.Size = new System.Drawing.Size(392, 199);
+            this.UserRTB.Size = new System.Drawing.Size(392, 102);
             this.UserRTB.TabIndex = 0;
             this.UserRTB.Text = "";
             // 

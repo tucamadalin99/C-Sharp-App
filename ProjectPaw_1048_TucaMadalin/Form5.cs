@@ -37,7 +37,12 @@ namespace ProjectPaw_1048_TucaMadalin
         private void listBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (listBox1.Items.Count > 0)
-                listBox1.DoDragDrop(listBox1.SelectedItem, DragDropEffects.Copy | DragDropEffects.Move);
+                try { listBox1.DoDragDrop(listBox1.SelectedItem, DragDropEffects.Copy | DragDropEffects.Move); }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("No string selected!");
+                }
+                
         }
 
         private void listBox2_DragDrop(object sender, DragEventArgs e)

@@ -32,6 +32,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteDatabseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.yearsBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,7 +60,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printPreviewToolStripMenuItem,
-            this.loadDataToolStripMenuItem});
+            this.loadDataToolStripMenuItem,
+            this.databaseToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -77,6 +81,29 @@
             this.loadDataToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
             this.loadDataToolStripMenuItem.Text = "Load Data";
             this.loadDataToolStripMenuItem.Click += new System.EventHandler(this.loadDataToolStripMenuItem_Click);
+            // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteDatabseToolStripMenuItem,
+            this.openDatabaseToolStripMenuItem});
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.databaseToolStripMenuItem.Text = "Database";
+            // 
+            // deleteDatabseToolStripMenuItem
+            // 
+            this.deleteDatabseToolStripMenuItem.Name = "deleteDatabseToolStripMenuItem";
+            this.deleteDatabseToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.deleteDatabseToolStripMenuItem.Text = "Delete database";
+            this.deleteDatabseToolStripMenuItem.Click += new System.EventHandler(this.deleteDatabseToolStripMenuItem_Click);
+            // 
+            // openDatabaseToolStripMenuItem
+            // 
+            this.openDatabaseToolStripMenuItem.Name = "openDatabaseToolStripMenuItem";
+            this.openDatabaseToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.openDatabaseToolStripMenuItem.Text = "Open database";
+            this.openDatabaseToolStripMenuItem.Click += new System.EventHandler(this.openDatabaseToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -163,7 +190,7 @@
             this.loadBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loadBtn.ForeColor = System.Drawing.Color.White;
             this.loadBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.graphic;
-            this.loadBtn.Location = new System.Drawing.Point(372, 240);
+            this.loadBtn.Location = new System.Drawing.Point(371, 239);
             this.loadBtn.Name = "loadBtn";
             this.loadBtn.Size = new System.Drawing.Size(118, 73);
             this.loadBtn.TabIndex = 5;
@@ -209,7 +236,7 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.left_arrow;
-            this.button1.Location = new System.Drawing.Point(761, 391);
+            this.button1.Location = new System.Drawing.Point(761, 413);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(39, 36);
             this.button1.TabIndex = 7;
@@ -224,7 +251,7 @@
             this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.exit;
-            this.exitBtn.Location = new System.Drawing.Point(750, -1);
+            this.exitBtn.Location = new System.Drawing.Point(750, 27);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(50, 37);
             this.exitBtn.TabIndex = 2;
@@ -278,5 +305,8 @@
         private System.Windows.Forms.ToolStripMenuItem changeFontToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsBmpToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteDatabseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openDatabaseToolStripMenuItem;
     }
 }

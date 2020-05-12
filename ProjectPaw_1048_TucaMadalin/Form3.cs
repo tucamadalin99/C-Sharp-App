@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
@@ -58,7 +59,6 @@ namespace ProjectPaw_1048_TucaMadalin
                 double width = rect.Width / nrYears / 3;
                 distance = (rect.Width - nrYears * width) / (n + 1);
                 int leftControl = 1;
-                textBoxes[] tbs = new textBoxes[nrYears];
                 double vMax = vect.Max();
 
                 Brush br = new SolidBrush(color);
@@ -79,9 +79,15 @@ namespace ProjectPaw_1048_TucaMadalin
                     leftControl++;
 
                 }
-                for (int i = 0; i < n - 1; i++)
-                    g.DrawLine(pen, new Point((int)(recs[i].Location.X + width / 2), (int)(recs[i].Location.Y)),
-                         new Point((int)(recs[i + 1].Location.X + width / 2), (int)(recs[i + 1].Location.Y)));
+                try {
+                    for (int i = 0; i < n - 1; i++)
+                        g.DrawLine(pen, new Point((int)(recs[i].Location.X + width / 2), (int)(recs[i].Location.Y)),
+                             new Point((int)(recs[i + 1].Location.X + width / 2), (int)(recs[i + 1].Location.Y)));
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Array is full");
+                }
+              
             }
 
         }
@@ -136,6 +142,16 @@ namespace ProjectPaw_1048_TucaMadalin
                     firstYear++;
                     leftControl++;
                     yearsBtn.Enabled = false;
+                    if(t1.Top >= panel2.Height)
+                    {
+                        MessageBox.Show("Too many values!");
+               
+                        this.Invalidate();
+            
+                        panel2.Controls.Clear();
+                        yearsBtn.Enabled = true;
+                        break;
+                    }
                 }
             }
             catch(FormatException ex)
@@ -173,10 +189,12 @@ namespace ProjectPaw_1048_TucaMadalin
                 {
                     MessageBox.Show(ex.Message);
                 }
-                for (int i = 0; i < nrYears; i++)
-                {
-                    vect[i] = Convert.ToDouble(tbs[i].Text);
-                }
+             
+                    for (int i = 0; i < nrYears; i++)
+                    {
+                        vect[i] = Convert.ToDouble(tbs[i].Text);
+                    }
+              
 
                 try
                 {
@@ -201,7 +219,7 @@ namespace ProjectPaw_1048_TucaMadalin
                     panel1.Hide();
                     panel2.Hide();
                     Invalidate();
-                    MessageBox.Show("Data saved!");
+                    loadBtn.Visible = false;
                 }
                 catch(Exception ex)
                 {
@@ -210,8 +228,10 @@ namespace ProjectPaw_1048_TucaMadalin
             }catch(FormatException ex)
             {
                 MessageBox.Show("No data input in each year or invalid format!");
+                loadBtn.Visible = true;
                 
             }
+            
         }
 
         private void changeColorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -264,7 +284,7 @@ namespace ProjectPaw_1048_TucaMadalin
                 double width = rect.Width / nrYears / 3;
                 distance = (rect.Width - nrYears * width) / (n + 1);
                 int leftControl = 1;
-                textBoxes[] tbs = new textBoxes[nrYears];
+
                 double vMax = vect.Max();
 
                 Brush br = new SolidBrush(color);
@@ -307,6 +327,46 @@ namespace ProjectPaw_1048_TucaMadalin
             this.Hide();
             Form2 form2 = new Form2();
             form2.ShowDialog();
+        }
+
+        private void deleteDatabseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+              
+                var rezultat = MessageBox.Show(this,
+             $"Are you sure?",
+             "Database cleared",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Warning);
+                if (rezultat == DialogResult.Yes)
+                {
+                try
+                {
+                    string connStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = CazariEfectuate.accdb";
+                    OleDbConnection conex = new OleDbConnection(connStr);
+                    conex.Open();
+                    OleDbCommand com = new OleDbCommand();
+                    com.Connection = conex;
+                    com.CommandText = "DELETE * FROM cazariEfectuate";
+                    com.ExecuteNonQuery();
+                    conex.Close();
+                    MessageBox.Show("Database has been cleared!");
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                }
+                else
+                {
+                MessageBox.Show("Nothing was deleted.");
+                }
+                
+        }
+
+        private void openDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.ShowDialog();
+            
         }
     }
 }

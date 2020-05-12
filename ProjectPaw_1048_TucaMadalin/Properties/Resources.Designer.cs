@@ -253,6 +253,26 @@ namespace ProjectPaw_1048_TucaMadalin.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap send_to_trash {
+            get {
+                object obj = ResourceManager.GetObject("send-to-trash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap send_to_trash__1_ {
+            get {
+                object obj = ResourceManager.GetObject("send-to-trash (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap wrench {
             get {
                 object obj = ResourceManager.GetObject("wrench", resourceCulture);
