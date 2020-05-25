@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProiectPAW_Tuca_Madalin_1048
 {
-    class Cazare : ICloneable, IComparable, IPretMediu
+    public class Cazare : ICloneable, IComparable, IPretMediu
     {
         private string locatie;
         private int nrZile;
@@ -30,14 +30,14 @@ namespace ProiectPAW_Tuca_Madalin_1048
             id = (contor++);
         }
 
-        public Cazare(string l, int nrZ, string den, int nrC, string tipC, double[] p, double pM)
+        public Cazare(string den, string l, int nrZ, int nrC, string tipC, double pM)
         {
             locatie = l;
             nrZile = nrZ;
             denumire = den;
             nrCamera = nrC;
             tipCamera = tipC;
-            preturi = p;
+            preturi = new double[nrC];
             pretMediu = pM;
             id = (contor++);
         }
@@ -92,7 +92,17 @@ namespace ProiectPAW_Tuca_Madalin_1048
             }
         }
 
-
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                if(value >= 0)
+                {
+                    this.id = value;
+                }
+            }
+        }
         public double[] Preturi
         {
             get { return preturi; }
@@ -122,10 +132,10 @@ namespace ProiectPAW_Tuca_Madalin_1048
 
         public override string ToString()
         {
-            string result = "Locatia: " + locatie + "\n" + "Denumire: " + denumire + "\n"
-                + "Numar zile: " + nrZile + "\n" + "Numarul camerelor: " + nrCamera + "\n"
-                + "Tip camera: " + tipCamera + "\n" + "Pret mediu: " + pretMediu + "\nPreturi: "
-                + String.Join(", ", preturi.Select(p => p.ToString()).ToArray());
+            string result = denumire + "\n" +  locatie + "\n"
+                + nrZile + "\n" +  nrCamera + "\n"
+                +  tipCamera + "\n" +  pretMediu + "\n"
+                + String.Join(",", preturi.Select(p => p.ToString()).ToArray());
             
             return result;
            
@@ -144,11 +154,27 @@ namespace ProiectPAW_Tuca_Madalin_1048
             else return 0;
         }
 
+        public double this[int index]
+        {
+            get
+            {
+                if (preturi != null && index >= 0 && index < preturi.Length)
+                    return preturi[index];
+                else
+                    return 0;
+            }
+            set
+            {
+                if (value > 0 && index >= 0 && index < preturi.Length)
+                    preturi[index] = value;
+            }
+        }
+
         public double calcPretMediu()
         {
             return (double)this;
         }
-
+        
         public static Cazare operator+(Cazare c, double pret)
         {
             double[] preturiNoi = new double[c.preturi.Length + 1];
@@ -162,6 +188,24 @@ namespace ProiectPAW_Tuca_Madalin_1048
             return c;
         }
 
+        public void genPrice()
+        {
+            double[] prices = new double[nrCamera];
+           for(int i = 0; i < nrCamera; i++)
+            {
+                prices[i] = RandomNr(70, 400);
+            }
+            preturi = prices;
+        }
 
+
+        private static Random rnd = new Random();
+        public double RandomNr(double min, double max)
+        {
+           
+           
+            double calc = rnd.NextDouble() * (max - min) + min;
+            return Math.Truncate(calc * 100) / 100;
+        }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.accBtn = new System.Windows.Forms.Button();
@@ -37,9 +36,13 @@
             this.bookBtn = new System.Windows.Forms.Button();
             this.labelName = new System.Windows.Forms.Label();
             this.rtb1 = new System.Windows.Forms.RichTextBox();
-            this.exitBtn = new System.Windows.Forms.Button();
+            this.hotels2 = new ProjectPaw_1048_TucaMadalin.hotels();
+            this.admin1 = new ProjectPaw_1048_TucaMadalin.admin();
             this.hotels1 = new ProjectPaw_1048_TucaMadalin.hotels();
+            this.checkAdBtn = new System.Windows.Forms.Button();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
+            this.currentTime1 = new ProjectPaw_1048_TucaMadalin.CurrentTime();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +52,7 @@
             this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(809, 10);
+            this.panel3.Size = new System.Drawing.Size(944, 10);
             this.panel3.TabIndex = 3;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
@@ -121,6 +124,7 @@
             this.bookedBtn.Text = "My bookings";
             this.bookedBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bookedBtn.UseVisualStyleBackColor = false;
+            this.bookedBtn.Click += new System.EventHandler(this.bookedBtn_Click);
             // 
             // bookBtn
             // 
@@ -145,7 +149,7 @@
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.White;
-            this.labelName.Location = new System.Drawing.Point(336, 57);
+            this.labelName.Location = new System.Drawing.Point(460, 77);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(137, 28);
             this.labelName.TabIndex = 5;
@@ -156,12 +160,49 @@
             // 
             this.rtb1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.rtb1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtb1.Enabled = false;
             this.rtb1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb1.Location = new System.Drawing.Point(279, 111);
+            this.rtb1.Location = new System.Drawing.Point(370, 111);
             this.rtb1.Name = "rtb1";
-            this.rtb1.Size = new System.Drawing.Size(398, 301);
+            this.rtb1.Size = new System.Drawing.Size(398, 142);
             this.rtb1.TabIndex = 7;
             this.rtb1.Text = "";
+            // 
+            // hotels2
+            // 
+            this.hotels2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
+            this.hotels2.Location = new System.Drawing.Point(193, 0);
+            this.hotels2.Name = "hotels2";
+            this.hotels2.Size = new System.Drawing.Size(751, 447);
+            this.hotels2.TabIndex = 10;
+            // 
+            // admin1
+            // 
+            this.admin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
+            this.admin1.Location = new System.Drawing.Point(326, 108);
+            this.admin1.Name = "admin1";
+            this.admin1.Size = new System.Drawing.Size(469, 267);
+            this.admin1.TabIndex = 11;
+            // 
+            // hotels1
+            // 
+            this.hotels1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
+            this.hotels1.Location = new System.Drawing.Point(196, 11);
+            this.hotels1.Name = "hotels1";
+            this.hotels1.Size = new System.Drawing.Size(588, 409);
+            this.hotels1.TabIndex = 8;
+            // 
+            // checkAdBtn
+            // 
+            this.checkAdBtn.FlatAppearance.BorderSize = 0;
+            this.checkAdBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkAdBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.technology__2_;
+            this.checkAdBtn.Location = new System.Drawing.Point(906, 385);
+            this.checkAdBtn.Name = "checkAdBtn";
+            this.checkAdBtn.Size = new System.Drawing.Size(38, 36);
+            this.checkAdBtn.TabIndex = 12;
+            this.checkAdBtn.UseVisualStyleBackColor = true;
+            this.checkAdBtn.Click += new System.EventHandler(this.checkAdBtn_Click);
             // 
             // exitBtn
             // 
@@ -171,20 +212,12 @@
             this.exitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.exit;
-            this.exitBtn.Location = new System.Drawing.Point(730, 11);
+            this.exitBtn.Location = new System.Drawing.Point(894, 12);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(50, 37);
             this.exitBtn.TabIndex = 6;
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
-            // 
-            // hotels1
-            // 
-            this.hotels1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
-            this.hotels1.Location = new System.Drawing.Point(196, 11);
-            this.hotels1.Name = "hotels1";
-            this.hotels1.Size = new System.Drawing.Size(588, 409);
-            this.hotels1.TabIndex = 8;
             // 
             // adminBtn
             // 
@@ -196,7 +229,7 @@
             this.adminBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminBtn.ForeColor = System.Drawing.Color.White;
             this.adminBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.wrench;
-            this.adminBtn.Location = new System.Drawing.Point(480, 40);
+            this.adminBtn.Location = new System.Drawing.Point(622, 36);
             this.adminBtn.Name = "adminBtn";
             this.adminBtn.Size = new System.Drawing.Size(197, 69);
             this.adminBtn.TabIndex = 9;
@@ -205,18 +238,29 @@
             this.adminBtn.UseVisualStyleBackColor = false;
             this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click);
             // 
+            // currentTime1
+            // 
+            this.currentTime1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
+            this.currentTime1.Location = new System.Drawing.Point(718, 394);
+            this.currentTime1.Name = "currentTime1";
+            this.currentTime1.Size = new System.Drawing.Size(185, 27);
+            this.currentTime1.TabIndex = 13;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
-            this.ClientSize = new System.Drawing.Size(782, 424);
-            this.Controls.Add(this.hotels1);
-            this.Controls.Add(this.rtb1);
+            this.ClientSize = new System.Drawing.Size(944, 424);
+            this.Controls.Add(this.hotels2);
+            this.Controls.Add(this.currentTime1);
+            this.Controls.Add(this.checkAdBtn);
+            this.Controls.Add(this.admin1);
             this.Controls.Add(this.exitBtn);
-            this.Controls.Add(this.labelName);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.rtb1);
+            this.Controls.Add(this.labelName);
             this.Controls.Add(this.adminBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
@@ -239,5 +283,9 @@
         private System.Windows.Forms.RichTextBox rtb1;
         private ProjectPaw_1048_TucaMadalin.hotels hotels1;
         private System.Windows.Forms.Button adminBtn;
+        private ProjectPaw_1048_TucaMadalin.hotels hotels2;
+        private ProjectPaw_1048_TucaMadalin.admin admin1;
+        private System.Windows.Forms.Button checkAdBtn;
+        private ProjectPaw_1048_TucaMadalin.CurrentTime currentTime1;
     }
 }

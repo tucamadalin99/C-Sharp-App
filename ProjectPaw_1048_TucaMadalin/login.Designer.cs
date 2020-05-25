@@ -165,6 +165,7 @@
             this.tbAge.Name = "tbAge";
             this.tbAge.Size = new System.Drawing.Size(137, 22);
             this.tbAge.TabIndex = 11;
+            this.tbAge.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbAge_KeyDown);
             // 
             // label6
             // 
@@ -278,6 +279,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "login";
             this.Size = new System.Drawing.Size(622, 416);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.login_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

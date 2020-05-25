@@ -115,6 +115,7 @@
             this.ctBtn.Text = "Contact";
             this.ctBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ctBtn.UseVisualStyleBackColor = true;
+            this.ctBtn.Click += new System.EventHandler(this.ctBtn_Click);
             // 
             // logBtn
             // 

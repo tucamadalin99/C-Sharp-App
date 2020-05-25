@@ -34,6 +34,7 @@
             this.tbuName = new System.Windows.Forms.TextBox();
             this.tbPassLog = new System.Windows.Forms.TextBox();
             this.logBtn = new System.Windows.Forms.Button();
+            this.currentTime1 = new ProjectPaw_1048_TucaMadalin.CurrentTime();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -82,6 +83,7 @@
             this.tbPassLog.Size = new System.Drawing.Size(135, 22);
             this.tbPassLog.TabIndex = 5;
             this.tbPassLog.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tbPassLog.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPassLog_KeyDown);
             // 
             // logBtn
             // 
@@ -101,12 +103,22 @@
             this.logBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.logBtn.UseVisualStyleBackColor = false;
             this.logBtn.Click += new System.EventHandler(this.logBtn_Click);
+            this.logBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.logBtn_KeyPress);
+            // 
+            // currentTime1
+            // 
+            this.currentTime1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
+            this.currentTime1.Location = new System.Drawing.Point(215, 189);
+            this.currentTime1.Name = "currentTime1";
+            this.currentTime1.Size = new System.Drawing.Size(186, 27);
+            this.currentTime1.TabIndex = 7;
             // 
             // client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.appBg;
+            this.Controls.Add(this.currentTime1);
             this.Controls.Add(this.logBtn);
             this.Controls.Add(this.tbPassLog);
             this.Controls.Add(this.tbuName);
@@ -128,5 +140,6 @@
         private System.Windows.Forms.TextBox tbuName;
         private System.Windows.Forms.TextBox tbPassLog;
         private System.Windows.Forms.Button logBtn;
+        private CurrentTime currentTime1;
     }
 }

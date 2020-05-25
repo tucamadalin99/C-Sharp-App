@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectPaw_1048_TucaMadalin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -104,6 +105,12 @@ namespace ProiectPAW_Tuca_Madalin_1048
         private void timeLbl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ctBtn_Click(object sender, EventArgs e)
+        {
+            Form5 f5 = new Form5();
+            f5.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
