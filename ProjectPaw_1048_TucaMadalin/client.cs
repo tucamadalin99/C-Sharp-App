@@ -31,6 +31,7 @@ namespace ProjectPaw_1048_TucaMadalin
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             tbPassLog.UseSystemPasswordChar = true;
+
         }
 
         private void logBtn_Click(object sender, EventArgs e)
@@ -106,6 +107,14 @@ namespace ProjectPaw_1048_TucaMadalin
 
             }
 
+        }
+
+        private void tbPassLog_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Return)
+            {
+                logBtn_Click(sender, e);
+            }
         }
     }
 }

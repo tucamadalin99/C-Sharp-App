@@ -228,5 +228,22 @@ namespace ProiectPAW_Tuca_Madalin_1048
         {
             tbConfPass.UseSystemPasswordChar = true;
         }
+
+        private void login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Control && e.KeyCode.ToString() == "L")
+            {
+
+                button4_Click(sender, e);
+            }
+        }
+
+        private void tbAge_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Control && e.KeyCode.ToString() == "R")
+            {
+                button4_Click(sender, e);
+            }
+        }
     }
 }

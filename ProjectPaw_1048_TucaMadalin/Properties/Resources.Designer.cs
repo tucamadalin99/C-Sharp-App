@@ -63,6 +63,16 @@ namespace ProjectPaw_1048_TucaMadalin.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _interface {
+            get {
+                object obj = ResourceManager.GetObject("interface", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap app_background {
             get {
                 object obj = ResourceManager.GetObject("app-background", resourceCulture);
@@ -123,9 +133,29 @@ namespace ProjectPaw_1048_TucaMadalin.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cross__2_ {
+            get {
+                object obj = ResourceManager.GetObject("cross (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap files_and_folders__1_ {
+            get {
+                object obj = ResourceManager.GetObject("files-and-folders (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +296,16 @@ namespace ProjectPaw_1048_TucaMadalin.Properties {
         internal static System.Drawing.Bitmap send_to_trash__1_ {
             get {
                 object obj = ResourceManager.GetObject("send-to-trash (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap technology__2_ {
+            get {
+                object obj = ResourceManager.GetObject("technology (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

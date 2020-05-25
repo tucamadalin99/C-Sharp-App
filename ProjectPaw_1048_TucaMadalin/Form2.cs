@@ -27,10 +27,12 @@ namespace ProiectPAW_Tuca_Madalin_1048
             InitializeComponent();
             rtb1.Visible = false;
             hotels2.Visible = false;
+            admin1.Visible = false;
  
         }
         int mouseX = 0, mouseY = 0;
         bool mouseDown;
+        int checkAdmin = 0;
         private void exitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -40,6 +42,7 @@ namespace ProiectPAW_Tuca_Madalin_1048
         {
             firstPanel f1 = new firstPanel();
             this.Visible = false;
+            checkAdmin = 0;
             f1.ShowDialog();
         }
 
@@ -48,6 +51,8 @@ namespace ProiectPAW_Tuca_Madalin_1048
             StreamReader sr = new StreamReader("UserList.txt");
             hotels2.Visible = false;
             rtb1.Visible = true;
+            admin1.Hide();
+            checkAdmin = 0;
             rtb1.Text = sr.ReadToEnd();
 
 
@@ -80,14 +85,21 @@ namespace ProiectPAW_Tuca_Madalin_1048
         {
             hotels2.Visible = true;
             rtb1.Visible = false;
-           
+            checkAdmin = 0;
         }
 
         private void adminBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form3 form3 = new Form3();
-            form3.ShowDialog();
+            if (checkAdmin == 1 && admin1.Visible == false)
+            {
+                this.Hide();
+                Form3 form3 = new Form3();
+                form3.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Login as admin first!");
+            }
         }
 
         private void bookedBtn_Click(object sender, EventArgs e)
@@ -97,6 +109,12 @@ namespace ProiectPAW_Tuca_Madalin_1048
             f4.ShowDialog();
             
 
+        }
+
+        private void checkAdBtn_Click(object sender, EventArgs e)
+        {
+            admin1.Visible = true;
+            checkAdmin = 1;
         }
 
         private void panel3_MouseUp(object sender, MouseEventArgs e)

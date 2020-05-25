@@ -34,9 +34,6 @@
             this.denC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.locC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nrCC = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.selectBtn = new System.Windows.Forms.Button();
-            this.updateBtn = new System.Windows.Forms.Button();
-            this.delBtn = new System.Windows.Forms.Button();
             this.confPnl = new System.Windows.Forms.Panel();
             this.cbCam = new System.Windows.Forms.ComboBox();
             this.priceLbl = new System.Windows.Forms.Label();
@@ -46,10 +43,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.confBtn = new System.Windows.Forms.Button();
             this.tbCNP = new System.Windows.Forms.TextBox();
             this.tbPers = new System.Windows.Forms.TextBox();
             this.tbFName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.confBtn = new System.Windows.Forms.Button();
+            this.delBtn = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.selectBtn = new System.Windows.Forms.Button();
+            this.currentTime1 = new ProjectPaw_1048_TucaMadalin.CurrentTime();
             this.confPnl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +67,7 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(41, 54);
+            this.listView1.Location = new System.Drawing.Point(25, 38);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(390, 388);
@@ -79,7 +83,7 @@
             // denC
             // 
             this.denC.Text = "Denumire";
-            this.denC.Width = 106;
+            this.denC.Width = 97;
             // 
             // locC
             // 
@@ -90,39 +94,6 @@
             // 
             this.nrCC.Text = "Camere disp";
             this.nrCC.Width = 81;
-            // 
-            // selectBtn
-            // 
-            this.selectBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.selectBtn.Location = new System.Drawing.Point(11, 2);
-            this.selectBtn.Name = "selectBtn";
-            this.selectBtn.Size = new System.Drawing.Size(90, 46);
-            this.selectBtn.TabIndex = 1;
-            this.selectBtn.Text = "Show bookings";
-            this.selectBtn.UseVisualStyleBackColor = true;
-            this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateBtn.Location = new System.Drawing.Point(180, 2);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(90, 46);
-            this.updateBtn.TabIndex = 2;
-            this.updateBtn.Text = "Confirm Selected";
-            this.updateBtn.UseVisualStyleBackColor = true;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
-            // 
-            // delBtn
-            // 
-            this.delBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.delBtn.Location = new System.Drawing.Point(355, 2);
-            this.delBtn.Name = "delBtn";
-            this.delBtn.Size = new System.Drawing.Size(90, 46);
-            this.delBtn.TabIndex = 3;
-            this.delBtn.Text = "Deleted booking";
-            this.delBtn.UseVisualStyleBackColor = true;
-            this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
             // 
             // confPnl
             // 
@@ -238,17 +209,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Full Name:";
             // 
-            // confBtn
-            // 
-            this.confBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.confBtn.Location = new System.Drawing.Point(77, 298);
-            this.confBtn.Name = "confBtn";
-            this.confBtn.Size = new System.Drawing.Size(89, 42);
-            this.confBtn.TabIndex = 5;
-            this.confBtn.Text = "Confirm";
-            this.confBtn.UseVisualStyleBackColor = true;
-            this.confBtn.Click += new System.EventHandler(this.confBtn_Click);
-            // 
             // tbCNP
             // 
             this.tbCNP.Location = new System.Drawing.Point(55, 104);
@@ -273,12 +233,114 @@
             this.tbFName.TabIndex = 0;
             this.tbFName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFName_KeyPress);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(429, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 17);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "List";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(429, 159);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 17);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Confirm";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(429, 253);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 17);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Cancel";
+            // 
+            // confBtn
+            // 
+            this.confBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.confBtn.FlatAppearance.BorderSize = 0;
+            this.confBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confBtn.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.confBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.check;
+            this.confBtn.Location = new System.Drawing.Point(74, 298);
+            this.confBtn.Name = "confBtn";
+            this.confBtn.Size = new System.Drawing.Size(89, 54);
+            this.confBtn.TabIndex = 5;
+            this.confBtn.Text = "Confirm";
+            this.confBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.confBtn.UseVisualStyleBackColor = true;
+            this.confBtn.Click += new System.EventHandler(this.confBtn_Click);
+            // 
+            // delBtn
+            // 
+            this.delBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delBtn.FlatAppearance.BorderSize = 0;
+            this.delBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.delBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.cross__2_;
+            this.delBtn.Location = new System.Drawing.Point(418, 273);
+            this.delBtn.Name = "delBtn";
+            this.delBtn.Size = new System.Drawing.Size(53, 46);
+            this.delBtn.TabIndex = 3;
+            this.delBtn.UseVisualStyleBackColor = true;
+            this.delBtn.Click += new System.EventHandler(this.delBtn_Click);
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateBtn.FlatAppearance.BorderSize = 0;
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.updateBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources.files_and_folders__1_;
+            this.updateBtn.Location = new System.Drawing.Point(418, 179);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(48, 46);
+            this.updateBtn.TabIndex = 2;
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            // 
+            // selectBtn
+            // 
+            this.selectBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.selectBtn.FlatAppearance.BorderSize = 0;
+            this.selectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.selectBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.selectBtn.Image = global::ProjectPaw_1048_TucaMadalin.Properties.Resources._interface;
+            this.selectBtn.Location = new System.Drawing.Point(418, 86);
+            this.selectBtn.Name = "selectBtn";
+            this.selectBtn.Size = new System.Drawing.Size(53, 46);
+            this.selectBtn.TabIndex = 1;
+            this.selectBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.selectBtn.UseVisualStyleBackColor = true;
+            this.selectBtn.Click += new System.EventHandler(this.selectBtn_Click);
+            // 
+            // currentTime1
+            // 
+            this.currentTime1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
+            this.currentTime1.Location = new System.Drawing.Point(546, 21);
+            this.currentTime1.Name = "currentTime1";
+            this.currentTime1.Size = new System.Drawing.Size(185, 27);
+            this.currentTime1.TabIndex = 8;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(58)))), ((int)(((byte)(67)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.currentTime1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.confPnl);
             this.Controls.Add(this.delBtn);
             this.Controls.Add(this.updateBtn);
@@ -287,9 +349,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form4";
             this.Text = "Booking page";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form4_KeyDown);
             this.confPnl.ResumeLayout(false);
             this.confPnl.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -316,5 +380,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label priceLbl;
         private System.Windows.Forms.ComboBox cbCam;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private CurrentTime currentTime1;
     }
 }

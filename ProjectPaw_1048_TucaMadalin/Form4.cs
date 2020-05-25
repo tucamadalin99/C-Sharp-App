@@ -198,6 +198,15 @@ namespace ProjectPaw_1048_TucaMadalin
            
 
         }
+
+        private void Form4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Control && e.KeyCode.ToString() == "L")
+            {
+                MessageBox.Show("LisT");
+            }
+        }
     }
     
 }
+

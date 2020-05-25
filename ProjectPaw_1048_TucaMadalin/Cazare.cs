@@ -154,6 +154,22 @@ namespace ProiectPAW_Tuca_Madalin_1048
             else return 0;
         }
 
+        public double this[int index]
+        {
+            get
+            {
+                if (preturi != null && index >= 0 && index < preturi.Length)
+                    return preturi[index];
+                else
+                    return 0;
+            }
+            set
+            {
+                if (value > 0 && index >= 0 && index < preturi.Length)
+                    preturi[index] = value;
+            }
+        }
+
         public double calcPretMediu()
         {
             return (double)this;
